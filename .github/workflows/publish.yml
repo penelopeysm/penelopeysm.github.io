@@ -1,3 +1,5 @@
+# Pretty much copied from https://github.com/withastro/action
+
 name: Deploy to GitHub Pages
 
 on:
