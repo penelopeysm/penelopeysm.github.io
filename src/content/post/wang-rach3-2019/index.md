@@ -27,7 +27,7 @@ I do remember though, that M. and I met at South Kensington tube, grabbed someth
 (And of course I was super excited to see Yuja Wang, whose ascent to stardom is well-documented.)
 The Rachmaninoff has been preserved on YouTube:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gyPHOJ1Bm1Y?si=nhSR2wtL0tFZl-Qf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/gyPHOJ1Bm1Y?si=nhSR2wtL0tFZl-Qf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 In particular, I remember being enthralled by the rhythmic tension at 8:30 onwards.
 Notice how Wang lengthens notes like those I highlighted below:

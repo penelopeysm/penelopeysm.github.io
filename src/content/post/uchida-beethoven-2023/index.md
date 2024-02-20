@@ -47,9 +47,9 @@ Give that Uchida recording a listen, it's really well worth it.
 It'd be one of my desert island recordings for sure.
 Here is the Op. 111:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WGg9cE-ceso?si=_F88BM58F_L-VKjv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/WGg9cE-ceso?si=_F88BM58F_L-VKjv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 More recently I've been listening to a lot of period-instrument performances.
 My favourite is Penelope Crawford:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=lHcYBOlZbTvKQbJT&amp;list=OLAK5uy_mqDZuNNKEKsAj1epv0MOcOrXgTxdxffo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=lHcYBOlZbTvKQbJT&amp;list=OLAK5uy_mqDZuNNKEKsAj1epv0MOcOrXgTxdxffo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
