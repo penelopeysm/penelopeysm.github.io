@@ -15,6 +15,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url).href;
 ---
 
+{/* Go away, Google */}
+<meta content='noindex,nofollow' name='robots' />
+
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
