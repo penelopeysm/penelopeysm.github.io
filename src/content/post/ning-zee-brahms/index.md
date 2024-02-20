@@ -1,13 +1,13 @@
 ---
 title: "Ning Feng, Zee Zee: Brahms violin sonatas"
-description: "This concert made me actually start a blog"
+description: "10/10 Beautiful, intimate music-making. This concert made me actually start a blog."
 publishDate: "2024-01-25"
-tags: ["classical", "live", "wigmore-hall", "10"]
+tags: ["classical-live", "wigmore-hall", "10"]
 ---
 
 ## Programme
 
-**25 Jan 2024, Wigmore Hall, 19:30**
+**19:30, 25 January 2024, Wigmore Hall**
 
 Ning Feng violin<br/>
 Zee Zee piano
@@ -42,7 +42,7 @@ A particularly touching moment was the high A at the end of the first movement o
 
 It's so tempting to play the high A loud, because it's the very peak of the phrase.
 (And Brahms *does* write *sempre cresc.* the bar before this!)
-Instead of that, though, Ning went into what was almost a mezzo-piano, which (to me) was wistful and poignant: it seemed like something beautiful in the clouds, tangible, but unreachable.
+Instead of that, though, Ning went into what was almost a mezzo-piano, which to me was wistful and poignant: it conjured an image of something beautiful in the clouds, tangible, but unreachable.
 
 I really thought the whole set was incredibly beautiful.
 I don't know what the rest of the audience was thinking, because somehow I was the only person to give a standing ovation at the end. 🤷‍♀️
