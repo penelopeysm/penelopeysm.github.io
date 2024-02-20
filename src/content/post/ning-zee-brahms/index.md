@@ -17,6 +17,8 @@ Zee Zee piano
 - Brahms: *Scherzo* from F-A-E Sonata
 - Brahms: Violin Sonata No. 3 in D minor, Op. 108
 
+https://www.wigmore-hall.org.uk/whats-on/202401251930
+
 ## My thoughts
 
 I moved to London a few months ago and have been intending to use this opportunity to go for more classical concerts, so I turned up for this all-Brahms programme mostly on a whim.
