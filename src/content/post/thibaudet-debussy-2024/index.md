@@ -2,7 +2,7 @@
 title: "Thibaudet: Debussy Preludes"
 description: "Perhaps slightly spoilt by my seat..."
 publishDate: "2024-01-24"
-tags: ["classical-live", "6"]
+tags: ["classical-live", "barbican-centre", "6"]
 ---
 
 ## Programme
