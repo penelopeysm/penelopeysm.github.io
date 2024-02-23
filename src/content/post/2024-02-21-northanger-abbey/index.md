@@ -60,4 +60,10 @@ But I won't give a rating, because I don't have a baseline to compare against.
 I thought the acting was fantastic.
 Having made one shameful attempt at it in a previous life, I'm pretty sure I could never do such a thing.
 
-Ultimately, I guess this post was just a vehicle for me to talk about my favourite author. :-)
+If there was one thing I didn't like, it was the fact that I really often couldn't catch many of the words being said.
+I think this is partly due to accent (I've always struggled with understanding non-RP accents), and partly due to the speed at which some of the lines were delivered.
+But I think this is a me problem, or a theatre problem in general, and not anything to do with this particular production.
+(I do distinctly remember facing exactly the same problem in the last play I watched... yes, that one in 2011!)
+
+Ultimately, though, if it's anything Austen, I'm almost certainly going to enjoy it.
+Especially if I get to make a long after-the-fact post about my favourite author. :-)

@@ -1,5 +1,5 @@
 ---
-import { menuLinks } from "@/site-config";
+import { menuLinks, siteConfig } from "@/site-config";
 
 import Search from "../Search.astro";
 import ThemeToggle from "../ThemeToggle.astro";
@@ -19,7 +19,7 @@ const url = new URL(Astro.request.url);
 				class="me-3 h-10 w-6 sm:absolute sm:start-[-4.5rem] sm:me-0 sm:h-20 sm:w-12"
 				src="/rosie.png"
 			/>
-			<span class="text-xl font-bold sm:text-2xl">Penny's Corner</span>
+			<span class="text-xl font-bold sm:text-2xl">{siteConfig.title}</span>
 		</a>
 		<nav
 			aria-label="Main menu"

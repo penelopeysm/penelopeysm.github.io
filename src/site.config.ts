@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Penelope Yong",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Penny's Corner",
+	title: "Penny listens 🎵",
 	// Meta property used as the default description meta property
 	description: "A blog mostly about classical music",
 	// HTML lang property, found in src/layouts/Base.astro L:18
