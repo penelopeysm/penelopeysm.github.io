@@ -52,3 +52,12 @@ By asserting that Austen (or any other writer) wasn't writing about lesbians, we
 
 So, it's nice to see something different.
 Sure, it may take some liberties with the source; but in doing so, it liberates us from what is usually interpreted as an overwhelming heteronormativity of the 19th-century literary canon.
+
+## Did I enjoy it?
+
+Yes!
+But I won't give a rating, because I don't have a baseline to compare against.
+I thought the acting was fantastic.
+Having made one shameful attempt at it in a previous life, I'm pretty sure I could never do such a thing.
+
+Ultimately, I guess this post was just a vehicle for me to talk about my favourite author. :-)
