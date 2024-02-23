@@ -2,7 +2,7 @@
 title: "Vengerov, Oxford Phil: Mendelssohn concerto, Brahms 1"
 description: "6/10 Too much Mendelssohn"
 publishDate: "2024-01-11"
-tags: ["classical-live", "sheldonian-theatre"]
+tags: ["classical-live", "sheldonian-theatre", "6"]
 ---
 
 ## Programme

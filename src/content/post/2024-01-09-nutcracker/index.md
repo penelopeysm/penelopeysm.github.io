@@ -2,7 +2,7 @@
 title: "The Royal Ballet: The Nutcracker"
 description: "10/10 Dancing! And music I never get to hear!"
 publishDate: "2024-01-09"
-tags: ["classical-live", "royal-opera-house"]
+tags: ["classical-live", "ballet", "royal-opera-house", "10"]
 ---
 
 ## Programme
