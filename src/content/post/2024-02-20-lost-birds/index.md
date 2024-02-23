@@ -26,8 +26,10 @@ The poems themselves are beyond reproach, but I think what's really interesting 
 I've never managed to get into poetry: it's a sort of 'language' which I've never quite understood.
 But *music* (or, at least, classical and classical-adjacent music) is a language that I get, and in this context it seems to act as a kind of bridge for me.
 
-I like the look of the Apple Music embed, so that's what I've put here, but you can get all of this on YouTube too for free.
+I like the look of the Apple Music embed, so that's what I've put here.
+(Also, if you have an Apple Music subscription... like I do... you can sign into the widget and listen to the full piece, not just the preview.)
+But, you can get all of this on YouTube too for free!
 [Here's a link to the official playlist.](https://www.youtube.com/watch?v=_lYhND404bk&list=OLAK5uy_l4aJPR2bRtgGdqnPl_WlO-7lEdvfPFIUY)
 The only quibble I have with YouTube is that the transition between successive pieces isn't seamless, which breaks the *attacca* pieces, such as *All That Could Never Be Said* into *I Shall Not See the Shadows*.
 
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/the-lost-birds/1635380205"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/gb/album/the-lost-birds/1635380205"></iframe>
