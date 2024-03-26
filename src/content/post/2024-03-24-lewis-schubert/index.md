@@ -33,9 +33,9 @@ The noticeably brisk tempi provided a strong sense of forward momentum to propel
 At the same time, I didn't feel that there was a strong sense of individuality in the performance: my impression was that it was a fairly straightforward reading of the music.
 I would say that some of my favourite pianists fall into this category (I'm thinking Perahia and Schiff), and I really enjoy their Bach because I can focus on the music instead of wondering what the performer's going to do next (I didn't really enjoy Barenboim's *Goldberg Variations*, for example).
 
-But I came out of the concert wishing it was a little bit more interesting, because some of the bits where he _did_ play with the music a bit were really delicious, such as the rubato in this passage (from the third movement of D959) where he inserted the tiniest gap of silence between the descending arpeggios in the fifth bar:
+But I came out of the concert wishing it was a little bit more interesting, because some of the bits where he _did_ play with the music a bit were really delicious, such as the rubato in this passage (from the third movement of D960) where he inserted the tiniest gap of silence between the *fp* chord and the other two:
 
-![D959 Scherzo arpeggiated](./d959.png)
+![D960](./d960_1.png)
 
 And there were some very beautiful shifts in tone colour, for example, during the shift from C minor to C major in the fourth movement of D958:
 
@@ -43,7 +43,7 @@ And there were some very beautiful shifts in tone colour, for example, during th
 
 as well as in the tinkling high notes in the fourth movement of D960:
 
-![D960](./d960.png)
+![D960](./d960_2.png)
 
 And the fourth movement of D959 opened with an amazing sensation of warmth that felt almost like an embrace.
 
