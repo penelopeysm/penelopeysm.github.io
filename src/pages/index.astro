@@ -3,25 +3,30 @@ import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/utils";
 
+const meta = {
+	description: "Home page",
+	title: "Home",
+};
+
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
-<PageLayout meta={{ title: "Home" }}>
+<PageLayout meta={meta}>
 	<section>
-		<h1 class="title mb-6">Hello!</h1>
+		<h1 class="title mb-6 text-xl">Hello!</h1>
 		<p class="mb-4">
-			At long last I've decided to start collecting classical music concerts that I've attended.
-			I'll try to rate how much I enjoyed each of them and write a little bit of justification,
+      At long last I&rsquo;ve decided to start collecting classical music concerts that I&rsquo;ve attended.
+      I&rsquo;ll try to rate how much I enjoyed each of them and write a little bit of justification,
 			although these are of course all subjective, and are not intended as a review of how <i
 				>good</i
-			> the performance was. Unfortunately I don't have full records of concerts before 2024, although
-			I'm trying to add those I still remember.
+      > the performance was. Unfortunately I don&rsquo;t have full records of concerts before 2024, although
+      I&rsquo;m trying to add those I still remember.
 		</p>
 		<p class="mb-4">
-			I'm a software engineer at my day job. If I have lots of spare time I might write a bit about
-			programming or other stuff, but no promises. As the URL of this blog suggests, you can find me
+      I&rsquo;m a software engineer at my day job. If I have lots of spare time I might write a bit about
+			programming or other stuff, but no promises. You can find me
 			on GitHub at <a class="cactus-link" href="https://github.com/penelopeysm" target="_blank"
 				>@penelopeysm</a
 			>.
@@ -36,7 +41,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			>.
 		</p>
 	</section>
-	<section aria-label="Blog post list" class="mt-16">
+	<section aria-label="Blog post list" class="mt-10">
 		<h2 class="title mb-4 text-xl">Posts</h2>
 		<ul class="space-y-4">
 			{

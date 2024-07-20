@@ -1,0 +1,34 @@
+---
+import ProjectLink from "@/components/ProjectLink.astro";
+import PageLayout from "@/layouts/Base.astro";
+---
+
+<PageLayout meta={{ title: "Projects" }}>
+	<section>
+		<h1 class="title mb-6 text-xl">Projects</h1>
+		<p class="mb-4">Here&rsquo;s a list of some recent-ish stuff I&rsquo;ve worked on.</p>
+
+		<ul class="list-disc">
+			<ProjectLink
+				langs={["Haskell"]}
+				title="A library to scrape PokémonDB data into a PostgreSQL database"
+				url="https://github.com/penelopeysm/apripsql"
+			/>
+			<ProjectLink
+				langs={["Haskell"]}
+				title="A Discord bot for a Pokémon collectors’ server"
+				url="https://apribot.fly.dev"
+			/>
+			<ProjectLink
+				langs={["SvelteKit", "Rust"]}
+				title="A website aggregating classical music concerts in London"
+				url="https://pysm.dev/london_classical"
+			/>
+			<ProjectLink
+				langs={["Julia"]}
+				title="A toy package for simulating NMR spectra"
+				url="https://pysm.dev/Dangerous.jl"
+			/>
+		</ul>
+	</section>
+</PageLayout>
