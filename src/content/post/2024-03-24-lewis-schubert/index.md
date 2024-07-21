@@ -1,8 +1,8 @@
 ---
 title: "Paul Lewis: Schubert D958, D959, D960"
-description: "7/10 A straightforward rendition allowing Schubert's late masterpieces room to shine"
+description: "A straightforward rendition allowing Schubert's late masterpieces room to shine"
 publishDate: "2024-03-24"
-tags: ["classical-live", "wigmore-hall", "7"]
+tags: ["classical-live", "wigmore-hall"]
 ---
 
 ## Programme
@@ -46,11 +46,6 @@ as well as in the tinkling high notes in the fourth movement of D960:
 ![D960](./d960_2.png)
 
 And the fourth movement of D959 opened with an amazing sensation of warmth that felt almost like an embrace.
-
-At the end of the day, I had a very hard time deciding between a score of 7 and 8, but I've eventually gone for 7 because of the very selfish reason that I was quite tired by the end of it.
-As always, scores should never be taken as a mark of how good a concert, merely how much I enjoyed it!
-
-**7/10**
 
 ## Recordings
 

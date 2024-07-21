@@ -1,8 +1,8 @@
 ---
 title: "Vengerov, Oxford Phil: Mendelssohn concerto, Brahms 1"
-description: "6/10 Too much Mendelssohn"
+description: "A bit too much Mendelssohn"
 publishDate: "2024-01-11"
-tags: ["classical-live", "sheldonian-theatre", "6"]
+tags: ["classical-live", "sheldonian-theatre"]
 ---
 
 ## Programme
@@ -26,4 +26,4 @@ I figure that they probably felt they had to bring in a big name as a replacemen
 But as much as I like listening to these repertoire staples, I've long thought that the Oxford Phil's programming is way too conservative, and it's a shame that what was probably my last concert in Oxford did nothing to dispel this notion.
 
 I can't say I particularly remember anything about the performance itself standing out.
-I probably wasn't in a super good mental state anyway because of the house moving,s o I'll leave it at that.
+I probably wasn't in a super good mental state anyway because of the house moving, so I'll leave it at that.

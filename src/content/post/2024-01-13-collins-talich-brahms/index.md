@@ -1,8 +1,8 @@
 ---
 title: "Michael Collins et al.: Brahms chamber pieces"
-description: "9/10 A bumper programme of late Brahms"
+description: "A bumper programme of late Brahms"
 publishDate: "2024-01-13"
-tags: ["classical-live", "southbank-centre", "9"]
+tags: ["classical-live", "southbank-centre"]
 ---
 
 ## Programme

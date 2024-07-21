@@ -1,8 +1,8 @@
 ---
 title: "Ning Feng, Zee Zee: Brahms violin sonatas"
-description: "10/10 Beautiful, intimate music-making. This concert made me actually start a blog."
+description: "Beautiful, intimate music-making. This concert made me actually start a blog!"
 publishDate: "2024-01-25"
-tags: ["classical-live", "wigmore-hall", "10"]
+tags: ["classical-live", "wigmore-hall"]
 ---
 
 ## Programme
@@ -53,8 +53,6 @@ In my experience, people tend give standing ovations to artists they *think* are
 
 I'm scheduled to watch Hilary Hahn, who's genuinely my all-time favourite violinist, play the same repertoire in March.
 I am struggling to imagine how it will be better!
-
-**10/10**
 
 ## Recordings
 

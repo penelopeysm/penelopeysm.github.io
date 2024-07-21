@@ -2,7 +2,7 @@
 title: "Thibaudet: Debussy Preludes"
 description: "Perhaps slightly spoilt by my seat..."
 publishDate: "2024-01-24"
-tags: ["classical-live", "barbican-centre", "6"]
+tags: ["classical-live", "barbican-centre"]
 ---
 
 ## Programme
@@ -41,8 +41,6 @@ Unfortunately, I was *really* close to the piano:
 and I think I was getting a very raw sound from the piano.
 In fact it was close enough for me to hear Thibaudet pressing the pedal.
 So, I have a nagging suspicion that a different seat would have given me a slightly more blended sound which I might've preferred.
-
-**6/10**
 
 ## Recordings
 
