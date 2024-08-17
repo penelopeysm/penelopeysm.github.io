@@ -1,57 +1,73 @@
 ---
-import PostPreview from "@/components/blog/PostPreview.astro";
-import PageLayout from "@/layouts/Base.astro";
-import { getAllPosts, sortMDByDate } from "@/utils";
+import { getCollection } from "astro:content";
+const title = "A penny for...";
 
-const meta = {
-	description: "Home page",
-	title: "Home",
-};
+async function getAllPosts() {
+  let posts = await getCollection("posts");
+  posts.sort((a, b) => {
+    if (a.data.publishDate < b.data.publishDate) {
+      return 1;
+    } else if (a.data.publishDate > b.data.publishDate) {
+      return -1;
+    } else {
+      const aSortOrder = a.data.sortOrder === undefined ? 1 : a.data.sortOrder;
+      const bSortOrder = b.data.sortOrder === undefined ? 1 : b.data.sortOrder;
+      return aSortOrder - bSortOrder;
+    }
+  });
+  return posts;
+}
 
-const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
-<PageLayout meta={meta}>
-	<section>
-		<h1 class="title mb-6 text-xl">Hello!</h1>
-		<p class="mb-4">
-			At long last I&rsquo;ve decided to start collecting classical music concerts that I&rsquo;ve
-			attended. I&rsquo;ll try to talk a little bit about what I enjoyed (or did not enjoy) about
-			each of them with some justification, although these are of course all subjective, and are not
-			intended as a review of how <i>good</i> the performance was. Unfortunately I don&rsquo;t have full
-			records of concerts before 2024, although I&rsquo;m trying to add those I still remember.
-		</p>
-		<p class="mb-4">
-			I&rsquo;m a software engineer at my day job. I love writing Haskell, but realistically most of
-			my job is Python. If I have lots of spare time I might write a bit about programming or other
-			stuff, but no promises. You can find me on GitHub at <a
-				class="cactus-link"
-				href="https://github.com/penelopeysm"
-				target="_blank">@penelopeysm</a
-			>.
-		</p>
-		<p class="mb-4">
-			This blog is made with <a class="cactus-link" href="https://astro.build" target="_blank"
-				>Astro</a
-			>, and the theme is a very slightly modified version of <a
-				class="cactus-link"
-				href="https://github.com/chrismwilliams/astro-theme-cactus"
-				target="_blank">Astro Cactus</a
-			>.
-		</p>
-	</section>
-	<section aria-label="Blog post list" class="mt-10">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
-</PageLayout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+
+    <p>
+      At long last I&rsquo;ve decided to start collecting classical music
+      concerts that I&rsquo;ve attended. I&rsquo;ll try to talk a little bit
+      about what I enjoyed (or did not enjoy) about each of them with some
+      justification, although these are of course all subjective, and are not
+      intended as a review of how <i>good</i> the performance was. Unfortunately
+      I don&rsquo;t have full records of concerts before 2024, although I&rsquo;m
+      trying to add those I still remember.
+    </p>
+
+    <p>
+      I&rsquo;m a software engineer at my day job. I love writing Haskell, but
+      realistically most of my job is <s>Python</s>
+      <s>Julia</s> GitHub Actions. If I have lots of spare time I might write a bit
+      about programming or other stuff, but no promises. You can find me on GitHub
+      at <a href="https://github.com/penelopeysm" target="_blank"
+        >@penelopeysm</a
+      >.
+    </p>
+
+    <p>
+      This blog is done using Astro. The layout is extremely bare-bones at the
+      moment because I'm redoing it from scratch instead of using a template.
+      Hopefully you like the late-1990s aesthetic.
+    </p>
+
+    <h2>Posts</h2>
+    <ul>
+      {
+        allPosts.map((post) => (
+          <li>
+            {post.data.publishDate}:
+            <a href={`posts/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </body>
+</html>

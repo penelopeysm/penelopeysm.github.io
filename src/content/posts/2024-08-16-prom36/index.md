@@ -1,6 +1,5 @@
 ---
 title: "Prom 36: A Midsummer Night's Dream"
-description: ""
 publishDate: "2024-08-16"
 tags: ["bbc-proms"]
 ---
