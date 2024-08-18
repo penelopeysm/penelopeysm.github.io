@@ -1,7 +1,7 @@
 ---
 const { post } = Astro.props;
 
-function formatDate(date) {
+function formatDate(date: string) {
   return new Date(date).toLocaleDateString("en-GB", {
     year: "numeric",
     month: "short",
