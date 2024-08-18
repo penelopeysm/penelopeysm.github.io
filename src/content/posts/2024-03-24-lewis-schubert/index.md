@@ -1,6 +1,5 @@
 ---
 title: "Paul Lewis: Schubert D958, D959, D960"
-description: "A straightforward rendition allowing Schubert's late masterpieces room to shine"
 publishDate: "2024-03-24"
 tags: ["classical-live", "wigmore-hall"]
 ---

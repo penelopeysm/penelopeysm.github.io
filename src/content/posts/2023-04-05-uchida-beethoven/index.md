@@ -1,6 +1,5 @@
 ---
 title: "Recollections: Mitsuko Uchida, Beethoven Opp. 109–111"
-description: "Not quite the same as the legendary recording"
 publishDate: "2023-04-05"
 tags: ["classical-live", "southbank-centre"]
 ---

@@ -1,6 +1,5 @@
 ---
 title: "Prom 31: Mutter, Barenboim, West-Eastern Divan Orchestra"
-description: ""
 publishDate: "2024-08-11"
 tags: ["bbc-proms"]
 ---

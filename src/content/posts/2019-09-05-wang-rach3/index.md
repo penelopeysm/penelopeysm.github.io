@@ -1,6 +1,5 @@
 ---
-title: "Recollections: Yuja Wang, Rachmaninoff 3"
-description: "Prom 63, BBC Proms 2019"
+title: "Recollections: Prom 63, Yuja Wang, Rachmaninoff 3"
 publishDate: "2019-09-05"
 tags: ["classical-live", "proms", "royal-albert-hall"]
 ---

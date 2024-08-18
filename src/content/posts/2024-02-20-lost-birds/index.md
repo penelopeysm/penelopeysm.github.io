@@ -1,6 +1,5 @@
 ---
 title: "What I'm listening to: The Lost Birds"
-description: "A 2022 album from VOCES8, Christopher Tin, Royal Philharmonic Orchestra"
 publishDate: "2024-02-20"
 tags: ["listening"]
 ---

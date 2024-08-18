@@ -1,6 +1,5 @@
 ---
 title: "Prom 3: VOCES8 and The King's Singers"
-description: ""
 publishDate: "2024-07-21"
 tags: ["bbc-proms"]
 ---

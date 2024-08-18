@@ -1,6 +1,5 @@
 ---
 title: "The Royal Ballet: The Nutcracker"
-description: "Dancing! And music I never get to hear!"
 publishDate: "2024-01-09"
 tags: ["classical-live", "ballet", "royal-opera-house"]
 ---

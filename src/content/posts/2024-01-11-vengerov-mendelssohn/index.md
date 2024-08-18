@@ -1,6 +1,5 @@
 ---
 title: "Vengerov, Oxford Phil: Mendelssohn concerto, Brahms 1"
-description: "A bit too much Mendelssohn"
 publishDate: "2024-01-11"
 tags: ["classical-live", "sheldonian-theatre"]
 ---

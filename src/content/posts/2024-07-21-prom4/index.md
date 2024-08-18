@@ -1,7 +1,7 @@
 ---
 title: "Prom 4: Mahler 5"
-description: ""
 publishDate: "2024-07-21"
+sortOrder: 2
 tags: ["bbc-proms"]
 ---
 
@@ -22,9 +22,10 @@ https://www.bbc.co.uk/events/e6drn3
 
 ## My thoughts
 
-First of all, pardon the awkward URL slug.
+<s>First of all, pardon the awkward URL slug.
 It's like this because I need to get it to sort lexicographically lower than Prom 3 so that it shows up 'later' in the list of posts.
-Maybe I can fix this in the code at some point in time, but I'm sleepy, and really quite tired after going for [two Proms today](/posts/2024-07-21-prom3), standing for both, and to top it off taking the bus there both times because the train was not running.
+Maybe I can fix this in the code at some point in time, but I'm sleepy,</s> and really quite tired after going for [two Proms today](/posts/2024-07-21-prom3), standing for both, and to top it off taking the bus there both times because the train was not running.
+*(Update, 18 Aug 2024: it has been fixed.)*
 
 That said, I'd totally do it again in a heartbeat!
 

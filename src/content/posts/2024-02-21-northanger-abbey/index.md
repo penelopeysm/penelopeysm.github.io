@@ -1,6 +1,5 @@
 ---
 title: "Northanger Abbey at the Orange Tree Theatre"
-description: "And something completely different..."
 publishDate: "2024-02-21"
 tags: ["theatre", "austen", "orange-tree-theatre"]
 ---

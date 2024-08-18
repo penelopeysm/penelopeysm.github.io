@@ -1,6 +1,5 @@
 ---
 title: "Recollections: Martha Argerich, Prokofiev 3"
-description: "As far back as my memory goes!"
 publishDate: "2017-01-21"
 tags: ["classical-live", "sheldonian-theatre"]
 ---

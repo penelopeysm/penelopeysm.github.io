@@ -1,6 +1,5 @@
 ---
 title: "Ning Feng, Zee Zee: Brahms violin sonatas"
-description: "Beautiful, intimate music-making. This concert made me actually start a blog!"
 publishDate: "2024-01-25"
 tags: ["classical-live", "wigmore-hall"]
 ---

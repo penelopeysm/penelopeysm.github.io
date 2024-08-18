@@ -1,6 +1,5 @@
 ---
 title: "First Night of the Proms"
-description: ""
 publishDate: "2024-07-19"
 tags: ["bbc-proms"]
 ---

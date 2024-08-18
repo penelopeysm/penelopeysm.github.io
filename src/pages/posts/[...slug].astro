@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import Page from "../../components/Page.astro";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -14,15 +15,8 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<head>
-    <title>{entry.data.title}</title>
-    <meta charset="utf-8" />
-</head>
-
-<body>
-<h1>{entry.data.title}</h1>
-
-<a href="/">Back to home</a>
-
-<Content />
-</body>
+<Page title={entry.data.title}>
+    <h1>{entry.data.title}</h1>
+    <a href="/">Back to home</a>
+    <Content />
+</Page>

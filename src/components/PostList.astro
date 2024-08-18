@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import PostListItem from "./PostListItem.astro";
+
+async function getAllPosts() {
+  let posts = await getCollection("posts");
+  posts.sort((a, b) => {
+    if (a.data.publishDate < b.data.publishDate) {
+      return 1;
+    } else if (a.data.publishDate > b.data.publishDate) {
+      return -1;
+    } else {
+      const aSortOrder = a.data.sortOrder === undefined ? 1 : a.data.sortOrder;
+      const bSortOrder = b.data.sortOrder === undefined ? 1 : b.data.sortOrder;
+      return bSortOrder - aSortOrder;
+    }
+  });
+  return posts;
+}
+
+const allPosts = await getAllPosts();
+---
+
+<div id="post-list">
+  {allPosts.map((post) => <PostListItem post={post} />)}
+</div>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    row-gap: 10px;
+    column-gap: 30px;
+  }
+</style>
