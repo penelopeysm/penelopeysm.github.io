@@ -41,3 +41,18 @@ And of course it's lovely to hear the _Wedding March_ in context.
 
 I should say that Gemma New's conducting was really fun to watch.
 She's really expressive, and also has a way of making very clear movements with the baton with not much hand movement at all (I suppose some powerful fingers!)
+
+## Recordings
+
+_A Midsummer Night's Dream_ was one of the last pieces I purchased outright before I took out an Apple Music subscription.
+Having listened to quite a lot of recordings, my choice was Philippe Herreweghe's recording with Orchestre des Champs-Élysées.
+
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/gb/album/mendelssohn-ein-sommernachtstraum-a-midsummers/526023443"></iframe>
+
+Apart from it being a period performance (yes, I'm a HIPster! I love the Harmonia Mundi catalogue), I actually like that the tempi are not _too_ fast: the Scherzo, for example, isn't rushed at all.
+Despite not being super fast, it is still very rhythmic with all the semiquavers being impeccably placed, and I think there's a huge sense of satisfaction listening to a fast piece where the orchestra _doesn't_ rush.
+
+The vocal bits are also very well balanced and recorded, the singers don't stand out too much but meld into the orchestral texture very nicely.
+This perhaps reflects Herreweghe's experience with choral works.
+
+If there's one complaint I have with this recording, it's that it uses Mendelssohn's original German text, but that's a very minor quibble.
