@@ -73,7 +73,7 @@ This is where a sampling algorithm comes in.
 The role of a sampling algorithm is to generate a number of samples of some random variable $x$ that are distributed according to some target distribution $p(x)$
 (In our case, this means sampling $\theta$ from the posterior.)
 
-The use of random sampling to approximate a probability distribution is generally called a _Monte Carlo_ method.
+_Monte Carlo_ methods are those which use random sampling as an approximation technique.
 Of course, it is impossible to reconstruct a full continuous probability distribution from a finite number of samples.
 However, we are often not really interested in the shape of a full distribution, but rather some kind of expectation value.
 For example, we might want to know the mean of some function $f(x)$, i.e.,
@@ -95,8 +95,8 @@ One can show that this is an _unbiased_ estimator of $E[f(x)]$, in that if we dr
 However, the expectation value of this over all possible samples is equal to $E[f(x)]$.
 
 So, as long as we have a way of generating samples, we can obtain any expectation value we want.
-Crucially, sampling methods do this without knowledge of the full distribution $p(x)$; they generate samples _only_ by evaluating the value of some other distribution that is proportional to $p(x)$, let's say $\tilde{p}(x)$, such that $\tilde{p}(x) = kp(x)$ for all $x$ and some $k$.
-(In our case, $\tilde{p}(x)$ is the joint distribution, i.e. the numerator in eq. 1.)
+Crucially, sampling methods do this without knowledge of the full distribution $p(x)$; they generate samples _only_ by evaluating the value of some other function that is proportional to $p(x)$, let's say $\tilde{p}(x)$, such that $\tilde{p}(x) = kp(x)$ for all $x$ and some $k$.
+(In our case, $\tilde{p}(x)$ is the numerator in eq. 1.)
 
 There are a number of ways to do this (see *PRML* §11 for an overview); here we focus only on **Markov chain Monte Carlo** (MCMC) methods.
 A _Markov chain_ is a sequential series of samples, where the $(i+1)$-th sample $x^{(i+1)}$ is generated based on the $i$-th sample $x^{(i)}$ as well as the value of $\tilde{p}(x)$.
