@@ -32,7 +32,8 @@ function sample(; σ)
         x_i = samples[i-1]
         # Sample from the proposal distribution
         x_star = sample_q(x_i; σ=σ)
-        # Accept or reject the proposal samples[i] = accept(x_star, x_i) ? x_star : x_i
+        # Accept or reject the proposal
+        samples[i] = accept(x_star, x_i) ? x_star : x_i
     end
 
     return samples

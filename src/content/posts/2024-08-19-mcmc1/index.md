@@ -15,7 +15,7 @@ In future posts I aim to talk about implementing these in a way that is compatib
 
 In Bayesian inference, it's a not-uncommon scenario to have a probability distribution that is analytically intractable.
 Say that $\mathcal{D}$ is some data (observations) that we want to model, and our model takes a single parameter $\theta$.
-Then Bayes' theorem tells us that:
+Then Bayes's theorem tells us that:
 
 ```math
 p(\theta | \mathcal{D}) = \frac{p(\mathcal{D} | \theta) p(\theta)}{p(\mathcal{D})}.
@@ -275,7 +275,8 @@ mean(samples .^ 2)
 ```
 
 Okay, not too bad!
-This could be most straightforwardly improved by increasing the number of samples.
+If you ran this code yourself, you might find that the value is less or more accurate.
+This is because 1000 samples isn't really a lot; if we increase the number of samples to, say, 100000, you should obtain results that are much closer to the expected 0.48.
 
 ## The variance
 
@@ -427,4 +428,8 @@ It doesn't show that the Markov chain will _converge_ to the target distribution
 I think it does this because the proof is rather involved; a Google search for "ergodicity of Metropolis–Hastings" turns up a number of _very_ mathematical papers which I'm not quite ready for.
 In other words, this proof is left as an exercise for the reader.
 
-In the next instalment of this series, we'll look at applying the MH algorithm to an actual inference problem.
+In the [next instalment of this series](/posts/2024-08-22-mcmc2), we'll look at applying the MH algorithm to an actual inference problem.
+
+## The code, in full
+
+For convenience, the Julia code used in this blog post is [on GitHub](https://github.com/penelopeysm/penelopeysm.github.io/blob/main/src/content/posts/2024-08-19-mcmc1/code.jl).
