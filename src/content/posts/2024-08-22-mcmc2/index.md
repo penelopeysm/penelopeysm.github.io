@@ -115,6 +115,9 @@ function accept(current::Transition, proposal::Transition)
 end
 ```
 
+This implementation assumes a symmetric proposal distribution, but can easily be extended to accommodate an asymmetric one by modifying the definition of `accept`.
+In particular, we would need to pass `σ` as a parameter, and on the right-hand side of the inequality, we would need to add `log(q(current.value, proposal.value; σ=σ)) - log(q(proposal.value, current.value; σ=σ))`.
+
 ### Cleaning up: `sample`
 
 We also define a new `log_ptilde` function, which directly calculates the logarithm instead of first calculating $\tilde{p}(x)$ and then taking the logarithm.
@@ -142,8 +145,8 @@ function sample(log_ptilde_func; σ, x_init, N_samples)
         # Sample from the proposal distribution and construct a new
         # Transition
         x_star = sample_q(current.value; σ=σ)
-        logdensity_star = log_ptilde_func(x_star)
-        proposal = Transition(x_star, logdensity_star)
+        log_ptilde_star = log_ptilde_func(x_star)
+        proposal = Transition(x_star, log_ptilde_star)
         # Accept or reject the proposal
         samples[i] = accept(current, proposal) ? proposal : current
     end
@@ -385,7 +388,8 @@ The Guardian ran a short article on this in 2023: [Warmer winters keeping Bewick
 Although this data suggests that the swans are capable of modifying their behaviour as an adaptation to climate change, we definitely can't take it for granted.
 
 In the next post, we'll look at how to implement the same model within [the Turing.jl probabilistic programming framework](https://turinglang.org/).
-Turing contains a large number of sub-packages that pertain to different components of Bayesian inference; in particular, AbstractMCMC.jl defines an interface for MCMC sampling, and any sampler that conforms to this can be used with Turing.
+Turing contains a large number of sub-packages that pertain to different components of Bayesian inference.
+In particular, [AbstractMCMC.jl](https://github.com/TuringLang/AbstractMCMC.jl) defines an interface for MCMC sampling, and any sampler that conforms to this can be used with Turing.
 Thus, we'll also look at how we can adapt our existing sampling code to work with Turing.
 
 ## The code, in full

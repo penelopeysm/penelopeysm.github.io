@@ -4,7 +4,7 @@ using Statistics: mean, std
 
 struct Transition
     value::Vector{Float64}
-    log_density::Float64
+    log_ptilde::Float64
 end
 
 function sample_q(x_i::Vector{Float64}; σ)
@@ -12,7 +12,7 @@ function sample_q(x_i::Vector{Float64}; σ)
 end
 
 function accept(current::Transition, proposal::Transition)
-    return log(rand(Float64)) < proposal.log_density - current.log_density
+    return log(rand(Float64)) < proposal.log_ptilde - current.log_ptilde
 end
 
 function sample(log_ptilde_func; σ, x_init, N_samples)
@@ -26,8 +26,8 @@ function sample(log_ptilde_func; σ, x_init, N_samples)
         # Sample from the proposal distribution and construct a new
         # Transition
         x_star = sample_q(current.value; σ=σ)
-        logdensity_star = log_ptilde_func(x_star)
-        proposal = Transition(x_star, logdensity_star)
+        log_ptilde_star = log_ptilde_func(x_star)
+        proposal = Transition(x_star, log_ptilde_star)
         # Accept or reject the proposal
         samples[i] = accept(current, proposal) ? proposal : current
     end
