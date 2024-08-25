@@ -73,7 +73,7 @@ By the way, just to be absolutely clear, here $\log$ means the natural logarithm
 ```julia
 struct Transition
     value::Float64         # x
-    log_density::Float64   # log(ptilde(x))
+    log_ptilde::Float64    # log(ptilde(x))
 end
 ```
 
@@ -102,7 +102,7 @@ So we can write:
 
 ```julia
 function accept(current::Transition, proposal::Transition)
-    return log(rand(Float64)) < min(0, proposal.log_density - current.log_density)
+    return log(rand(Float64)) < min(0, proposal.log_ptilde - current.log_ptilde)
 end
 ```
 
@@ -111,7 +111,7 @@ Or really, we don't need to take the `min`, because the left-hand side is always
 
 ```julia
 function accept(current::Transition, proposal::Transition)
-    return log(rand(Float64)) < proposal.log_density - current.log_density
+    return log(rand(Float64)) < proposal.log_ptilde - current.log_ptilde
 end
 ```
 
@@ -176,7 +176,7 @@ First, we need to modify the `Transition` struct to take a vector of floats.
 ```julia
 struct Transition
     value::Vector{Float64}
-    log_density::Float64
+    log_ptilde::Float64
 end
 ```
 
