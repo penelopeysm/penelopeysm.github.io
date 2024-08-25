@@ -10,8 +10,8 @@ function formatDate(date: string) {
 }
 ---
 
-{formatDate(post.data.publishDate)}
-<a href={`posts/${post.slug}`}>{post.data.title}</a>
+<div>{formatDate(post.data.publishDate)}</div>
+<div><a href={`posts/${post.slug}`}>{post.data.title}</a></div>
 
 <style>
     li {
