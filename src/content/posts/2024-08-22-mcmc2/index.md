@@ -387,7 +387,7 @@ Similar patterns have been seen with other migratory birds as well.
 The Guardian ran a short article on this in 2023: [Warmer winters keeping Bewick's swans away from Britain](https://www.theguardian.com/news/2023/oct/13/warmer-winters-keep-bewicks-swans-away-britain).
 Although this data suggests that the swans are capable of modifying their behaviour as an adaptation to climate change, we definitely can't take it for granted.
 
-In the next post, we'll look at how to implement the same model within [the Turing.jl probabilistic programming framework](https://turinglang.org/).
+In the [next post](/posts/2024-08-25-mcmc3), we'll look at how to implement the same model within [the Turing.jl probabilistic programming framework](https://turinglang.org/).
 Turing contains a large number of sub-packages that pertain to different components of Bayesian inference.
 In particular, [AbstractMCMC.jl](https://github.com/TuringLang/AbstractMCMC.jl) defines an interface for MCMC sampling, and any sampler that conforms to this can be used with Turing.
 Thus, we'll also look at how we can adapt our existing sampling code to work with Turing.
