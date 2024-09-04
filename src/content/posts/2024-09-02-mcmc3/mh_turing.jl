@@ -111,5 +111,5 @@ mean([transition.value[2] for transition in chain]) * std(lats) / std(years)
 @model function not_the_right_model()
     a ~ Normal(0, 1)
 end
-chain = sample(not_the_right_model(), SimpleMHSampler(1), 1000)
+chain = sample(not_the_right_model(), SimpleMHSampler(1.0), 1000)
 mean([transition.value[2] for transition in chain]) * std(lats) / std(years)

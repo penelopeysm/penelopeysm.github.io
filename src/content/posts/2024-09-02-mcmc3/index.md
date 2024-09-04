@@ -336,7 +336,7 @@ Fundamentally, this is the least amount of work needed to implement a new sample
 It means we can call `sample` with our new sampler:
 
 ```julia
-chain = sample(swan_model(scaled_years, scaled_lats), SimpleMHSampler(1), 1000)
+chain = sample(swan_model(scaled_years, scaled_lats), SimpleMHSampler(1.0), 1000)
 ```
 
 This will return a vector with length 1000, where each element is a `Transition` (because that was what was returned as the `sample` from the steps above).
@@ -361,7 +361,7 @@ We could, in theory, pass an entirely different model and the sampler would stil
     a ~ Normal(0, 1)
 end
 
-chain = sample(not_the_right_model(), SimpleMHSampler(1), 1000)
+chain = sample(not_the_right_model(), SimpleMHSampler(1.0), 1000)
 mean([transition.value[2] for transition in chain]) * std(lats) / std(years)
 ```
 
