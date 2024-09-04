@@ -1,5 +1,10 @@
+using AbstractMCMC
+using Distributions
+using Random
 using Statistics: mean, std
+using Turing
 
+# Set up data
 years = range(1970, 2017)
 latlongs = [
     (51.74055, -2.40512 ), (51.75693, -2.3889  ), (51.78825, -1.53601 ),
@@ -26,9 +31,70 @@ scaled_lats = (lats .- mean(lats)) ./ std(lats)
 scaled_longs = (longs .- mean(longs)) ./ std(longs)
 scaled_years = (years .- mean(years)) ./ std(years)
 
+# Set up our types
+struct SimpleMHSampler <: AbstractMCMC.AbstractSampler
+    σ::Float64   # standard deviation of the proposal distribution
+end
 
-using Turing
+struct Transition
+    value::Vector{Float64}
+    lp::Float64   # log probability density up to additive constant
+end
 
+# Calculate lp using Distributions.jl rather than with maths
+α_prior_dist = Normal(0, 1)
+β_prior_dist = Normal(0, 1)
+function lp_swan(α, β, D)
+    lp_prior = logpdf(α_prior_dist, α) + logpdf(β_prior_dist, β)
+    lp_likelihood = sum(
+        logpdf(Normal(α + (β * t_i), 1), D_i)
+        for (D_i, t_i) in zip(D, scaled_years)
+    )
+    return lp_prior + lp_likelihood
+end
+
+# Method 1: Initial step
+function AbstractMCMC.step(
+    rng::Random.AbstractRNG,
+    model::AbstractMCMC.AbstractModel,
+    sampler::SimpleMHSampler;
+    kwargs...
+)
+    α = rand(rng, α_prior_dist)
+    β = rand(rng, β_prior_dist)
+    lp = lp_swan(α, β, scaled_lats)   # or scaled_longs
+
+    transition = Transition([α, β], lp)
+    return (transition, transition)
+end
+
+# Method 2: Subsequent steps
+# Includes a state parameter which is passed from the previous step.
+function AbstractMCMC.step(
+    rng::Random.AbstractRNG,
+    model::AbstractMCMC.AbstractModel,
+    sampler::SimpleMHSampler,
+    state::Transition;
+    kwargs...
+)
+    # Generate a new proposal
+    α, β = state.value
+    α_proposal_dist = Normal(α, sampler.σ)
+    β_proposal_dist = Normal(β, sampler.σ)
+    α = rand(rng, α_proposal_dist)
+    β = rand(rng, β_proposal_dist)
+    lp = lp_swan(α, β, scaled_lats)
+    proposal = Transition([α, β], lp)
+
+    # Determine whether to accept
+    if log(rand(Float64)) < proposal.lp - state.lp
+        return (proposal, proposal)
+    else
+        return (state, state)
+    end
+end
+
+# This means we can now use our SimpleMHSampler() with the sample() function.
 @model function swan_model(t, y)
     α ~ Normal(0, 1)
     β ~ Normal(0, 1)
@@ -36,6 +102,14 @@ using Turing
         y[i] ~ Normal(α + β * t[i], 1)
     end
 end
+chain = sample(swan_model(scaled_years, scaled_lats), SimpleMHSampler(1.0), 1000)
+mean([transition.value[2] for transition in chain]) * std(lats) / std(years)
 
-thain = sample(swan_model(scaled_years, scaled_lats), MH(), 1000)
-mean(chain[:β]) * std(lats) / std(years)
+# However, because the calculation of `lp` is hardcoded in the sampler itself,
+# we can use the sampler with any different model and it will still give us the
+# same result (which is not a good thing).
+@model function not_the_right_model()
+    a ~ Normal(0, 1)
+end
+chain = sample(not_the_right_model(), SimpleMHSampler(1), 1000)
+mean([transition.value[2] for transition in chain]) * std(lats) / std(years)

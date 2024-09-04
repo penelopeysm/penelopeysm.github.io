@@ -1,5 +1,5 @@
 ---
-title: MCMC... with Turing; part 3
+title: MCMC... with AbstractMCMC; part 3
 publishDate: "2024-09-02"
 tags: ["inference"]
 ---
@@ -137,7 +137,7 @@ mean(chain[:β]) * std(lats) / std(years)
 0.014031702378438407
 ```
 
-## AbstractMCMC
+## AbstractMCMC's API
 
 In the above, we used the MH sampler that is built into Turing.
 In order to use our own sampler, we need to reorganise our code into a form that obeys Turing's—or specifically, AbstractMCMC's—interface, [documented here](https://turinglang.org/AbstractMCMC.jl/dev/design/).
@@ -146,55 +146,247 @@ In summary, AbstractMCMC expects you to define a new sampler type as well as ass
 The sampler type must be a subtype of [`AbstractMCMC.AbstractSampler`](https://turinglang.org/AbstractMCMC.jl/dev/api/#AbstractMCMC.AbstractSampler):
 
 ```julia
-type MHSampler <: AbstractMCMC.AbstractSampler end
+using AbstractMCMC
+
+struct SimpleMHSampler <: AbstractMCMC.AbstractSampler
+    σ::Float64
+end
 ```
 
-The key method that needs to be defined is `AbstractMCMC.step`.
-In fact, two methods for this function need to be defined:
+In our case, this struct will contain a single field, `σ`, which is the standard deviation of the proposal distribution.
+This is the only parameter that we need to specify for the simplistic MH algorithm that we are using.
+In a more sophisticated version, we could (for example) embed more information about the proposal distribution here.
+
+**The key method that needs to be defined is `AbstractMCMC.step`.**
+In fact, two separate methods for this function need to be defined.
+The first of these is called to generate the initial state of the chain, and the second is called for each subsequent step.
 
 ```julia
+using Random
+
+# Method 1: Initial step
 function AbstractMCMC.step(
     rng::Random.AbstractRNG,
     model::AbstractMCMC.AbstractModel,
-    sampler::MHSampler;
+    sampler::SimpleMHSampler;
     kwargs...
 )
+    # implement
+end
+
+# Method 2: Subsequent steps
+function AbstractMCMC.step(
+    rng::Random.AbstractRNG,
+    model::AbstractMCMC.AbstractModel,
+    sampler::SimpleMHSampler,
+    state;
+    kwargs...
+)
+    # implement
+end
 ```
 
-This one above is used for the first step of the chain, for which there is no previous state to begin from.
-This method must therefore generate an initial state.
+As can be seen, the difference between the two is a `state` parameter.
+This parameter can be of any type the user chooses, and is used to pass information between successive sampling steps.
 
-On the other hand, the following method is used for the second and subsequent steps, where the state at the previous step is provided as an argument.
-In our case, the state that we are using is our `Transition` struct.
+Let's go through the other function parameters to make sure their purpose is clear.
+ - `rng` is a `Random.AbstractRNG` object which can be passed to control the pseudo-random number generation.
+   This can be passed to functions such as `rand()` when we are generating a new proposal, for example.
+ - The `model` argument is an object that represents the model we are sampling from.
+   We need to use this to evaluate the value of `lp` for the new proposal.
+   For now, we will actually completely ignore the `model` argument and manually calculate the value of `lp` for the new proposal.
+   The magic of Turing's `@model` macro is that it will use the model definition to automatically generate the code which calculates `lp`.
+   We'll revisit this in a later section.
+ - For our implementation, the `sampler` argument is an object of type `SimpleMHSampler`, with a specified value of `σ`.
+
+While the method signature above tells us about the parameters it expects, it doesn't say anything about the return type.
+As it turns out, AbstractMCMC expects both new methods to return a tuple of `(sample, state)`.
+Here, `sample` is the value that was sampled at this step; these samples are aggregated and eventually returned to the user when they run the MCMC sampling.
+On the other hand, `state` is not (by default) returned to the user: instead, it represents some sort of persistent state that is carried through successive MCMC steps.
+
+AbstractMCMC doesn't specify what types both `sample` and `state` need to be, so we are free to define any structure that is convenient.
+In our case, we can reuse our `Transition` struct from the previous post as the _sample_.
 We'll abbreviate `log_ptilde` to `lp` to match the terminology used in the Turing source code.
 In Turing, this quantity is often called the 'log probability' or 'log density'; though it's worth reiterating here that this is only true up to an additive constant.
 
+
 ```julia
 struct Transition
-    value::Float64   # x
-    lp::Float64      # log(ptilde(x))
+    value::Vector{Float64}
+    lp::Float64
 end
+```
 
+What about `state`?
+Well, at each step of the MH algorithm, our proposal distribution is centred on the parameter values in the previous step.
+Therefore, at the very minimum, the state needs to provide those parameter values.
+Furthermore, we can store the value of `lp` for the previous step as well, so that we avoid recalculating it (similar considerations were discussed in the previous post).
+It turns out that we can reuse the `Transition` struct for this purpose as well.
+
+### Calculating `lp` (but with Distributions.jl)
+
+At each step, we need to calculate the value of `lp` for each `Transition`.
+We previously did this by explicitly evaluating a mathematical expression, derived from the probability distribution functions:
+
+```julia
+function log_ptilde_swan(θ, D)
+    α, β = θ
+    log_prior = -0.5 * (α^2 + β^2)
+    log_likelihood = sum(-0.5 * (D_t - α - (β * t))^2 for (D_t, t) in zip(D, scaled_years))
+    return log_prior + log_likelihood
+end
+```
+
+It will be much easier, and much more generalisable, to use the Distributions.jl package to do this.
+The prior distributions are
+
+```math
+\alpha, \beta \sim \mathcal{N}(0, 1)
+```
+
+If we have a particular value of $\alpha$ and $\beta$ we want to calculate the prior probability for, we can simply call `logpdf(Normal(0, 1), α)` and `logpdf(Normal(0, 1), β)` to get the probability for each.
+
+Likewise, the likelihood for each (scaled) point $\mathcal{D}_i$ is
+
+```math
+\mathcal{D}_i \sim \mathcal{N}(\alpha + \beta t_i, 1)
+```
+
+where $t_i$ is the (scaled) year.
+Putting this all together:
+
+```julia
+using Distributions
+
+α_prior_dist = Normal(0, 1)
+β_prior_dist = Normal(0, 1)
+
+function lp_swan(α, β, D)
+    lp_prior = logpdf(α_prior_dist, α) + logpdf(β_prior_dist, β)
+    lp_likelihood = sum(
+        logpdf(Normal(α + (β * t_i), 1), D_i)
+        for (D_i, t_i) in zip(D, scaled_years)
+    )
+    return lp_prior + lp_likelihood
+end
+```
+
+
+### Method 1: Initial step
+
+For the initial step, we need to create a new `Transition`.
+In the previous post, we tackled this by setting all the parameters to 0.
+A more sensible option may be to instead sample from the prior distributions: we have $\alpha, \beta \sim \mathcal{N}(0, 1)$, which is easy to sample from.
+For simplicity, we'll use the sampling functionality in Distributions.jl.
+
+
+```julia
 function AbstractMCMC.step(
     rng::Random.AbstractRNG,
     model::AbstractMCMC.AbstractModel,
-    sampler::MHSampler;
-    state,
-    ...
+    sampler::SimpleMHSampler;
+    kwargs...
 )
+    α = rand(rng, α_prior_dist)
+    β = rand(rng, β_prior_dist)
+    lp = lp_swan(α, β, scaled_lats)   # or scaled_longs
+
+    transition = Transition([α, β], lp)
+    return (transition, transition)
+end
 ```
 
-In both cases, `rng` is a `Random.AbstractRNG` object which can be passed to control the pseudo-random number generation.
-This can be passed to functions such as `rand()` when we are generating a new proposal, for example.
+The first `transition` is the sample that is aggregated and returned to the user, and the second `transition` is the state that is passed to the next step.
 
-The `model` argument is an object that represents the model we are sampling from.
-We need to use this to evaluate the value of `lp` for the new proposal.
-Turing's `@model` macro does a _lot_ of behind-the-scenes magic to generate such an object.
-For now, we will actually ignore the `model` argument and manually calculate the value of `lp` for the new proposal.
-We will revisit this in a later post in this series.
+### Method 2: Subsequent steps
 
-The `sampler` argument is used as a way to specify at the type level which sampler we are using, i.e., to choose which method to dispatch to.
+The subsequent steps are very similar, except that our values of `α` and `β` are now sampled from a proposal distribution rather than the prior.
+The proposal distribution in turn depends on the state that is passed in.
 
-### Initial step
+```julia
+function AbstractMCMC.step(
+    rng::Random.AbstractRNG,
+    model::AbstractMCMC.AbstractModel,
+    sampler::SimpleMHSampler,
+    state::Transition;
+    kwargs...
+)
+    # Generate a new transition
+    α, β = state.value
+    α_proposal_dist = Normal(α, sampler.σ)
+    β_proposal_dist = Normal(β, sampler.σ)
+    α = rand(rng, α_proposal_dist)
+    β = rand(rng, β_proposal_dist)
+    lp = lp_swan(α, β, scaled_lats)
+    proposal = Transition([α, β], lp)
 
+    # Decide whether to accept it
+    if log(rand(Float64)) < proposal.lp - state.lp
+        return (proposal, proposal)
+    else
+        return (state, state)
+    end
+end
+```
 
+Fundamentally, this is the least amount of work needed to implement a new sampler that is compatible with AbstractMCMC.
+
+### What does this actually let us do?
+
+It means we can call `sample` with our new sampler:
+
+```julia
+chain = sample(swan_model(scaled_years, scaled_lats), SimpleMHSampler(1), 1000)
+```
+
+This will return a vector with length 1000, where each element is a `Transition` (because that was what was returned as the `sample` from the steps above).
+So, we can get the mean value of $\beta$ (and unscale) as follows:
+
+```julia
+mean([transition.value[2] for transition in chain]) * std(lats) / std(years)
+```
+
+```
+0.015130780756628156
+```
+
+As a reminder, the original paper said $0.015 \pm 0.003$, so our sampler _is_ working!
+
+However, it's worth pointing out that the way our sampler is written, it _only_ works for the swan model, and specifically only with latitudes.
+This is because the calculation of `lp` is hardcoded inside the _sampler_ itself.
+We could, in theory, pass an entirely different model and the sampler would still give us the same result as before.
+
+```julia
+@model function not_the_right_model()
+    a ~ Normal(0, 1)
+end
+
+chain = sample(not_the_right_model(), SimpleMHSampler(1), 1000)
+mean([transition.value[2] for transition in chain]) * std(lats) / std(years)
+```
+
+```
+0.015967697749133865
+```
+
+If we wanted to use it with a different model, or even different data (such as the longitudes), we would need to rewrite the `lp_swan` function.
+This is obviously not ideal; we can't rewrite a new sampler for each different model.
+The solution to this lies in the `model` parameter which we have been ignoring so far.
+By extracting the calculation of `lp` into something that is tied to `model`, this allows us to decouple the sampler from the model that it is sampling from.
+This will be the subject of the next post.
+
+### Other bits of AbstractMCMC
+
+There are a few other methods in AbstractMCMC which can be overloaded to provide custom functionality.
+However, AbstractMCMC provides a default implementation for these which means that it is not mandatory for downstream users to define them.
+These include:
+
+ - `AbstractMCMC.samples`: a function which takes the first sample and sets up a container (such as an array) to store that sample and the rest of them.
+ - `AbstractMCMC.save!!`: a function which saves the sample generated by each step in the aforementioned container.
+ - `AbstractMCMC.bundle_samples`: a function which takes the container and transforms it into a format that is more convenient for the user.
+
+For details about the expected method signatures, please refer to the [AbstractMCMC documentation](https://turinglang.org/AbstractMCMC.jl/dev/design/).
+
+## Code
+
+The full code from this post is [on GitHub](https://github.com/penelopeysm/penelopeysm.github.io/blob/main/src/content/posts/2024-09-02-mcmc3/mh_turing.jl).
