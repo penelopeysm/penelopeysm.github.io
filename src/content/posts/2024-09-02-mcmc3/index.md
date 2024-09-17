@@ -373,7 +373,7 @@ If we wanted to use it with a different model, or even different data (such as t
 This is obviously not ideal; we can't rewrite a new sampler for each different model.
 The solution to this lies in the `model` parameter which we have been ignoring so far.
 By extracting the calculation of `lp` into something that is tied to `model`, this allows us to decouple the sampler from the model that it is sampling from.
-This will be the subject of the next post.
+This will be the subject of the [next post](/posts/2024-09-05-mcmc4).
 
 ### Other bits of AbstractMCMC
 
