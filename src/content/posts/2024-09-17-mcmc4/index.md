@@ -1,6 +1,6 @@
 ---
 title: MCMC... with LogDensityProblems; part 4
-publishDate: "2024-09-05"
+publishDate: "2024-09-17"
 tags: ["inference"]
 ---
 
@@ -359,5 +359,8 @@ While we're at it, we should also avoid hardcoding the prior distributions.
 Essentially, what we need is a structure that holds information about the names of the variables as well as their distributions.
 We will look at this in the next post.
 
+## Code
+
+As always, the full code from this post is [on GitHub](https://github.com/penelopeysm/penelopeysm.github.io/blob/main/src/content/posts/2024-09-17-mcmc4/mh_turing.jl).
 
 [^derivatives]: If your sampler makes use of gradients or Hessians, then there are also other methods to implement, but this is the minimal interface.
