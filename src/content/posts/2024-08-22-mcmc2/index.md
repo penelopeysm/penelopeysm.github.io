@@ -288,7 +288,7 @@ p(\alpha = \alpha_i, \beta = \beta_i) &= p(\alpha = \alpha_i) \cdot p(\beta = \b
 or more helpfully, the _logarithm_ of this is
 
 ```math
-\log[p(\vec{\theta})] = \log\left(\frac{1}{2\pi}\right) - \frac{\alpha_i}{2} - \frac{\beta_i^2}{2}.
+\log[p(\vec{\theta})] = \log\left(\frac{1}{2\pi}\right) - \frac{\alpha_i^2}{2} - \frac{\beta_i^2}{2}.
 \tag{6}
 ```
 
