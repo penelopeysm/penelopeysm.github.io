@@ -6,6 +6,8 @@ const postCollection = defineCollection({
         title: z.string(),
         publishDate: z.string().date(),
         sortOrder: z.number().optional(),
+        tags: z.array(z.string()),
+        draft: z.boolean().optional(),
     }),
 });
 

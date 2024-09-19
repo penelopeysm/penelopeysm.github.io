@@ -11,10 +11,16 @@ function formatDate(date: string) {
 ---
 
 <div>{formatDate(post.data.publishDate)}</div>
-<div><a href={`posts/${post.slug}`}>{post.data.title}</a></div>
+<div>
+  {post.data.draft === true && <span class="draft-warning">(draft)</span>}
+  <a href={`posts/${post.slug}`}>{post.data.title}</a>
+</div>
 
 <style>
-    li {
-        style: none;
-    }
+  span.draft-warning {
+    color: #de3e7e;
+  }
+  li {
+    style: none;
+  }
 </style>

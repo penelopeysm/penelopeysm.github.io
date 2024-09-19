@@ -20,5 +20,18 @@ const { Content } = await entry.render();
 <Page title={entry.data.title}>
     <h1>{entry.data.title}</h1>
     <a href="/">Back to home</a>
+
+    {entry.data.draft === true && <p class="draft-warning">This post is a draft; it is not yet complete.</p>}
+
     <Content />
 </Page>
+
+<style>
+    .draft-warning {
+        color: #de3e7e;
+        font-size: 120%;
+        border: 2px solid #de3e7e;
+        padding: 5px 10px;
+        width: max-content;
+    }
+</style>
