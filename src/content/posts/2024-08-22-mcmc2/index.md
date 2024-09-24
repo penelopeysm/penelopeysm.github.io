@@ -214,7 +214,7 @@ Here's a 2019 picture of a pair in Slimbridge.
 ![Bewick's swans at Slimbridge](swan3.jpg)
 
 It turns out that over the years, Bewick's swans have started to prefer to _not_ fly quite so far.
-In a 2020 paper, Nuijten *et al.* (DOI: [10.1111/gcb.15151](https:/doi.org/10.1111/gcb.15151)) provide some data for the mean latitude and longitude of swan sightings in the winter season over a period of 48 years.
+In a 2020 paper, Nuijten *et al.* (DOI: [10.1111/gcb.15151](https://doi.org/10.1111/gcb.15151)) provide some data for the mean latitude and longitude of swan sightings in the winter season over a period of 48 years.
 
 ```julia
 years = range(1970, 2017)
