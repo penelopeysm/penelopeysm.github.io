@@ -53,3 +53,6 @@ It did make for a very impressive _Alborada del gracioso_ in the Ravel, though, 
 
 Finally, oddly, I seem to think that there were some deviations from the published programme.
 It's not that I really minded it (I'm just happy to have the chance to listen to live music for a fairly low price), but I think the Organ Concerto _Siciliano_ was cut, and the opening piece was definitely not a chorus from the St Matthew Passion, but rather the opening chorus from the St John Passion (_Herr, unser Herrscher_).
+
+23/10/2024: Edited to add that I've found the first of the two encores that Tharaud played; it's a Poulenc improvisation, _Hommage a Edith Piaf_.
+There's a YouTube recording of it [here](https://www.youtube.com/watch?v=z5ACQjroULo).
