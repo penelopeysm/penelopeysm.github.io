@@ -17,7 +17,7 @@ Emanuel Ax piano<br />
 
 https://www.bbc.co.uk/events/e4fcd4
 
-## My thoughts
+----------
 
 Promming tickets sold out extremely quickly; I was lucky to be at the RAH in person the morning before to get physical tickets.
 (Somehow, despite the Arena tickets being sold out online, the Box Office staff were still able to print out two tickets for me; this leads me to suspect that they reserve a certain number of tickets for in-person sales.

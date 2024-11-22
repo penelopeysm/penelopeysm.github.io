@@ -12,7 +12,7 @@ Assortment of songs.
 
 https://www.bbc.co.uk/events/ec5wxj
 
-## My thoughts
+--------
 
 [I've written about VOCES8 before!](/posts/2024-02-20-lost-birds)
 After hearing them on Apple Music I went to look for their upcoming concerts, and was quite disappointed to find none in London... and then this Prom popped up, and I just _had_ to go for it, despite the 11am start (and the fact that the District line west of Earl's Court was shut!).

@@ -16,7 +16,7 @@ Mitsuko Uchida
 
 https://www.southbankcentre.co.uk/whats-on/classical-music/mitsuko-uchida-beethovens-late-sonatas
 
-## My thoughts
+------
 
 *(Despite the date on this post, I'm writing this on 20 Feb 2024.)*
 

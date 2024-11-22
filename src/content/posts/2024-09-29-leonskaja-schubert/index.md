@@ -16,7 +16,7 @@ Elisabeth Leonskaja piano
 
 https://www.wigmore-hall.org.uk/whats-on/202409291930
 
-## My thoughts
+-----------
 
 This is the second time this year I've heard Schubert's last three sonatas at Wigmore Hall; the last time was by [Paul Lewis](../../posts/2024-03-24-lewis-schubert).
 I think there is some risk in listening to the same repertoire twice, because I inevitably start to compare the current performance against the previous one, and I get disappointed when something isn't executed in a way that I liked, etc.

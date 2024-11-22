@@ -14,7 +14,7 @@ The Royal Ballet
 
 https://www.roh.org.uk/tickets-and-events/43/the-nutcracker-by-peter-wright/cast-list/54540
 
-## My thoughts
+------
 
 Okay: this really *isn't* a classical concert.
 But I have an incredible fondness for Tchaikovsky's *Nutcracker*: it's such a cheery piece with all sorts of catchy themes stuffed inside, and every time I put it on it never fails to lift my mood.

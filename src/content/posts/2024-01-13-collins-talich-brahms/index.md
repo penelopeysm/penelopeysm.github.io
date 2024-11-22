@@ -19,7 +19,7 @@ Talich Quartet
 
 https://www.southbankcentre.co.uk/whats-on/classical-music/michael-collins-friends-late-brahms
 
-## My thoughts
+------
 
 I don't really have much to say about this one!
 I thoroughly enjoyed myself and while the highlight of the entire programme (for me) was the *Clarinet Quintet*, everything else was extremely well done.

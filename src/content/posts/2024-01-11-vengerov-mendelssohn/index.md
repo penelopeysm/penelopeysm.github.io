@@ -17,7 +17,7 @@ Marios Papadopoulos conductor
 
 https://oxfordphil.com/event/maxim-vengerov-2/
 
-## My thoughts
+-----
 
 Vengerov was a replacement for Martha Argerich.
 Unfortunately Oxford Phil decided to play the Mendelssohn concerto, which they had played just a month ago, and one which is already (arguably) overperformed.

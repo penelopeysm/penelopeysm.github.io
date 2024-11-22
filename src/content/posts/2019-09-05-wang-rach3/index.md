@@ -17,7 +17,7 @@ Myung-Whun Chung, conductor
 
 https://www.bbc.co.uk/events/eq2rn3
 
-## My thoughts
+-----
 
 Despite the date on this post, I'm writing this on 20 Feb 2024.
 So, this concert was more than 4 years ago and notably was pre-pandemic so I really don't remember much!

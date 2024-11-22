@@ -14,7 +14,7 @@ Jean-Yves Thibaudet
 
 https://www.barbican.org.uk/whats-on/2024/event/jean-yves-thibaudet-debussy-preludes
 
-## My thoughts
+-------
 
 Debussy's *Preludes* were the first piece which really made me sit down and compare lots and lots of interpretations to find one I liked the most.
 I've also practised a couple of them, and in particular, I really love *Les collines d'Anacapri* (No. 5 from Book I).

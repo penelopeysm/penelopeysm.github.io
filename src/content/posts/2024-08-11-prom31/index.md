@@ -17,7 +17,7 @@ West-Eastern Divan Orchestra
 
 https://www.bbc.co.uk/events/egfcd4
 
-## My thoughts
+---------
 
 This was the first Prom in a while!
 I've been travelling to various places over the last two weeks for work, and although I had intended to go for Yunchan Lim's performance a couple of weeks ago, I wasn't in London at the time.

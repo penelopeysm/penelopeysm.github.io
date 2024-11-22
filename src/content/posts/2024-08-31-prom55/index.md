@@ -18,7 +18,7 @@ Berlin Philharmonic<br />
 
 https://www.bbc.co.uk/events/e9r5q9
 
-## My thoughts
+------------
 
 Ooh, now _this_ one was good.
 It was part of a two-Prom day, following on from [Yo-Yo Ma, Leonidas Kavakos, and Emanuel Ax playing piano trios](/posts/2024-08-31-prom54).

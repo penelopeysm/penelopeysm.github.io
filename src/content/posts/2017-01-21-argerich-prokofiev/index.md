@@ -18,7 +18,7 @@ Marios Papadopoulos, conductor
 
 https://bachtrack.com/review-argerich-papadopoulos-oxford-philharmonic-january-2017
 
-## My thoughts
+-----
 
 *(Despite the date on this post, I'm writing this on 20 Feb 2024.)*
 

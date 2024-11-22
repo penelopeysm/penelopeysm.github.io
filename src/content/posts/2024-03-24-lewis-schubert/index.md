@@ -16,7 +16,7 @@ Paul Lewis piano
 
 https://www.wigmore-hall.org.uk/whats-on/202403241930
 
-## My thoughts
+--------
 
 Paul Lewis is generally considered one of the best Schubert interpreters—so I couldn't help but snap up tickets for this concert featuring Schubert's last three piano sonatas.
 I must confess that although I have heard these sonatas many times, I have never actively listened enough to think about details of interpretation or structure.

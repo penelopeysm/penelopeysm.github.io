@@ -22,7 +22,7 @@ Alexandre Tharaud piano
 
 https://www.wigmore-hall.org.uk/whats-on/202410191930
 
-## My thoughts
+------------
 
 Tonight's programme mainly consisted of transcriptions of various Bach pieces as well as Dukas's most famous piece, _The Sorcerer's Apprentice_.
 Almost all of the transcriptions were written by Tharaud himself, and the programme notes made a point of emphasising that transcribing is in itself a form of artistry.

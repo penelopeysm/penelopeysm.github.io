@@ -19,7 +19,7 @@ London Symphony Orchestra
 
 https://www.lso.co.uk/whats-on/rachmaninoff-and-saint-saens-organ-symphony-15-sep/
 
-## My thoughts
+------------
 
 I managed to recover from Covid _just in time_ to go for this concert.
 The District line was down, and I thought that it would be super annoying for me to get there, but it turns out that actually... rail replacement buses are pretty fast.

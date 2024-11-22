@@ -23,7 +23,7 @@ Elim Chan conductor
 
 https://www.bbc.co.uk/events/ejc2rz
 
-## My thoughts
+-------
 
 Being able to attend (more of) the Proms was one of the things I've definitely been looking forward to since moving to London.
 Although I wasn't particularly thrilled by this programme, I decided to go, because why not?

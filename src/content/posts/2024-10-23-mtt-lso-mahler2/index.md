@@ -18,7 +18,7 @@ London Symphony Orchestra
 
 https://www.lso.co.uk/whats-on/mahler-2-resurrection-23-oct-24/
 
-## My thoughts
+----------
 
 Michael Tilson Thomas's health condition is very well-known, so I won't go on about it in this post, except to mention that he seemed much more sprightly than the last time he conducted the LSO in Mahler 3 back in May.
 

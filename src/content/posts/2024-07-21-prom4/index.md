@@ -20,7 +20,7 @@ Mark Elder conductor
 
 https://www.bbc.co.uk/events/e6drn3
 
-## My thoughts
+---------
 
 <s>First of all, pardon the awkward URL slug.
 It's like this because I need to get it to sort lexicographically lower than Prom 3 so that it shows up 'later' in the list of posts.
