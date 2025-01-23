@@ -101,8 +101,6 @@ Notice that in a functional language, say Haskell, you _have_ to use the latter 
 class Parent a where
     foo :: a -> IO ()
 
--- the argument seems unnecessary, but imagine that innerFoo was a function
--- which needed inputs to run correctly
 parentFoo :: Parent a => a -> IO ()
 parentFoo _ = putStrLn "calling Parent.foo"
 
