@@ -33,7 +33,7 @@ This means that you get to reuse any logic in the parent class that is supposed 
 
 Now, how do we do this in Julia?
 
-In Julia, types cannot subtype other concrete types, so the equivalent of the 'parent class' must be an abstract type.
+In Julia, concrete types cannot have subtypes, so the equivalent of the 'parent class' must be an abstract type.
 
 ```julia
 abstract type Parent end
@@ -48,7 +48,7 @@ function foo(::Child)
 end
 ```
 
-and doing `foo(Child())` will just print:
+Here, `foo(Child())` will just print:
 
 ```
 calling Child.foo
@@ -79,10 +79,10 @@ end
 ```
 
 This strategy is used quite extensively in Turing.jl code.
-For example, even though sampling is done using `sample`, the actual work of sampling is done in an inner function `AbstractMCMC.mcmcsample`.
-This allows us to have different sampling setup behaviour depending on the arguments.
+For example, even though users might perform sampling using `sample`, most of the actual implementation is done in an inner function `AbstractMCMC.mcmcsample`.
+This allows us to have different sampling setup behaviour depending on the arguments' types.
 
-One might ask why this is worse than the Python way.
+One might ask why this is any worse than the Python way.
 To me, it boils down to how much meaning the code carries.
 `parent_foo` is just a random identifier: it could have been swapped out for any other word, and _on its own_ it doesn't tell you anything about what it does, unless you choose the name specifically like we did here.
 Unfortunately, this is not always the case: see the `AbstractMCMC.mcmcsample` example above.
