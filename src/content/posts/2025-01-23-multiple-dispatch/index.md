@@ -95,7 +95,7 @@ In Python, when you see `super()`, that immediately tells you that it's trying t
 
 ## Haskell
 
-Notice that in a functional language, say Haskell, you _have_ to use the latter method:
+Notice that in a functional language, say Haskell, you _have_ to use the latter method, where you define functions with different names for the parent and child:
 
 ```haskell
 class Parent a where
