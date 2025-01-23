@@ -4,6 +4,8 @@ publishDate: "2025-01-23"
 tags: []
 ---
 
+## Python
+
 A common pattern in object-oriented programming is to have a default implementation on a parent class and to reuse that in a child class.
 In Python, this is done using the `super()` function.
 
@@ -26,6 +28,8 @@ calling Parent.foo
 ```
 
 This means that you get to reuse any logic in the parent class that is supposed to be shared amongst all children, but you also get to do specialised things in the child class if you need to.
+
+## Julia
 
 Now, how do we do this in Julia?
 
@@ -86,15 +90,17 @@ Quite often, the parent and child functions are called `foo` and `_foo`, which i
 
 In Python, when you see `super()`, that immediately tells you that it's trying to call a parent method, so the _intent_ of the code is clear.
 
+## Functional
+
 Notice that in a functional language, say Haskell, you _have_ to use the latter method:
 
 ```haskell
-class Parent where
-    foo :: IO ()
+class Parent a where
+    foo :: a -> IO ()
 
 -- the argument seems unnecessary, but imagine that innerFoo was a function
 -- which needed inputs to run correctly
-parentFoo :: Parent -> IO ()
+parentFoo :: Parent a => a -> IO ()
 parentFoo _ = putStrLn "calling Parent.foo"
 
 data Child = Child
@@ -102,7 +108,7 @@ data Child = Child
 instance Parent Child where
     foo c = do
         putStrLn "calling Child.foo"
-        innerFoo c
+        parentFoo c
 ```
 
-But: (1) Haskell doesn't pretend that it lets you reuse function names; and (2) unlike Julia, Haskell actually enforces the interface, in that if you try to define an `instance Parent IllegalChild` without a corresponding definition of `foo`, it won't compile.
+But: (1) Haskell at least doesn't pretend that it lets you reuse function names; and (2) unlike Julia, Haskell actually enforces the interface, in that if you try to define an `instance Parent IllegalChild` without a corresponding definition of `foo`, it won't compile.
