@@ -85,8 +85,11 @@ This allows us to have different sampling setup behaviour depending on the argum
 One might ask why this is any worse than the Python way.
 To me, it boils down to how much meaning the code carries.
 `parent_foo` is just a random identifier: it could have been swapped out for any other word, and _on its own_ it doesn't tell you anything about what it does, unless you choose the name specifically like we did here.
+
 Unfortunately, this is not always the case: see the `AbstractMCMC.mcmcsample` example above.
-Quite often, the parent and child functions are called `foo` and `_foo`, which is also quite unhelpful, because it doesn't tell you what the function does.
+`mcmcsample` carries no more meaning than `sample`, and it's hard to discern the relationship between the two functions without looking at the code.
+There's also `DynamicPPL.initialstep`, which is similarly related to `AbstractMCMC.step`.
+Sometimes, the parent and child functions are called `foo` and `_foo`, which is also quite unhelpful.
 
 In Python, when you see `super()`, that immediately tells you that it's trying to call a parent method, so the _intent_ of the code is clear.
 
