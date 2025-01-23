@@ -78,7 +78,7 @@ function foo(c::Child)
 end
 ```
 
-This strategy is used quite extensively in Turing.jl code.
+This strategy is used quite extensively in the Turing codebase.
 For example, even though users might perform sampling using `sample`, most of the actual implementation is done in an inner function `AbstractMCMC.mcmcsample`.
 This allows us to have different sampling setup behaviour depending on the arguments' types.
 
@@ -92,6 +92,7 @@ There's also `DynamicPPL.initialstep`, which is similarly related to `AbstractMC
 Sometimes, the parent and child functions are called `foo` and `_foo`, which is also quite unhelpful.
 
 In Python, when you see `super()`, that immediately tells you that it's trying to call a parent method, so the _intent_ of the code is clear.
+Conversely, in Julia, the language doesn't give the programmer the tools to write code that is self-explanatory, and you have to instead rely on the names being chosen and/or documented well.
 
 ## Haskell
 
@@ -112,7 +113,7 @@ instance Parent Child where
         parentFoo c
 ```
 
-But: (1) Haskell at least doesn't pretend that it lets you reuse function names; and (2) unlike Julia, Haskell actually enforces the interface\*, in that if you try to define an `instance Parent IllegalChild` without a corresponding definition of `foo`, it will tell you.
-
-\* Well, sort of: it emits a warning, which can be promoted to an error with `-Werror=missing-methods` if desired.
-There's talk about making this an error by default, but it hasn't happened yet, as of the time of writing.
+But:
+(1) Haskell at least doesn't pretend that it lets you reuse function names; and
+(2) unlike Julia, Haskell actually (sort of) enforces the interface, in that if you try to define an `instance Parent IllegalChild` without a corresponding definition of `foo`, it will emit a compile-time warning.
+(The warning can be promoted to an compiler error, and there's talk about making this an error by default, but it hasn't happened yet, as of the time of writing.)
