@@ -1,5 +1,5 @@
 ---
-title: Multiple dispatch
+title: Multiple dispatch as a substitute for inheritance
 publishDate: "2025-01-23"
 tags: []
 ---
