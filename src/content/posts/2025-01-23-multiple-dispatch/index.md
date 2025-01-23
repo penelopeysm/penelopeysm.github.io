@@ -90,7 +90,7 @@ Quite often, the parent and child functions are called `foo` and `_foo`, which i
 
 In Python, when you see `super()`, that immediately tells you that it's trying to call a parent method, so the _intent_ of the code is clear.
 
-## Functional
+## Haskell
 
 Notice that in a functional language, say Haskell, you _have_ to use the latter method:
 
@@ -111,4 +111,7 @@ instance Parent Child where
         parentFoo c
 ```
 
-But: (1) Haskell at least doesn't pretend that it lets you reuse function names; and (2) unlike Julia, Haskell actually enforces the interface, in that if you try to define an `instance Parent IllegalChild` without a corresponding definition of `foo`, it won't compile.
+But: (1) Haskell at least doesn't pretend that it lets you reuse function names; and (2) unlike Julia, Haskell actually enforces the interface\*, in that if you try to define an `instance Parent IllegalChild` without a corresponding definition of `foo`, it will tell you.
+
+\* Well, sort of: it emits a warning, which can be promoted to an error with `-Werror=missing-methods` if desired.
+There's talk about making this an error by default, but it hasn't happened yet, as of the time of writing.
