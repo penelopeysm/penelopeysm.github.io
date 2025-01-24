@@ -66,7 +66,11 @@ function foo(::Child)
 end
 ```
 
-Another is to use different functions.
+In fact, I think that this is the closest equivalent to the Python code above, in the sense that `super().foo()` isn't calling the parent method on an instance of the class, but rather on the class itself.
+I don't think I've seen this pattern used very much in Julia, though.
+(If you have an example, please let me know!)
+
+Another approach, and one that is used within the Turing.jl codebase quite substantially, is to use different functions.
 Because `parent_foo(::Child)` isn't defined, the method for its abstract supertype will be called instead.
 
 ```julia
@@ -78,18 +82,24 @@ function foo(c::Child)
 end
 ```
 
-This strategy is used quite extensively in the Turing codebase.
-For example, even though users might perform sampling using `sample`, most of the actual implementation is done in an inner function `AbstractMCMC.mcmcsample`.
-This allows us to have different sampling setup behaviour depending on the arguments' types.
+As a concrete example, even though users might perform sampling using [`sample`](https://github.com/TuringLang/AbstractMCMC.jl/blob/217200e5af0583fed8e476d42186ef610e3f9ddc/src/sample.jl#L54-L62), most of the actual implementation is done in an inner function [`AbstractMCMC.mcmcsample`](https://github.com/TuringLang/AbstractMCMC.jl/blob/217200e5af0583fed8e476d42186ef610e3f9ddc/src/sample.jl#L108-L122).
+This allows us to have different sampling setup behaviour depending on the arguments' types, but common shared MCMC logic.
+
+There's also [`DynamicPPL.initialstep`](https://github.com/TuringLang/DynamicPPL.jl/blob/727da635d290c22bc978dd09febe229bb8e7c906/src/sampler.jl#L112-L131), which is similarly related to `AbstractMCMC.step`, but with an inversion: the original method (`step`) is defined on the parent class, and it calls a method (`initialstep`) that is only defined for child classes.
+In other words, it looks like this:
+
+```julia
+function foo(p::Parent)
+    println("calling Parent.foo")
+    child_foo(p)
+end
+
+child_foo(::Child) = println("calling Child.foo")
+```
 
 One might ask why this is any worse than the Python way.
 To me, it boils down to how much meaning the code carries.
 `parent_foo` is just a random identifier: it could have been swapped out for any other word, and _on its own_ it doesn't tell you anything about what it does, unless you choose the name specifically like we did here.
-
-Unfortunately, this is not always the case: see the `AbstractMCMC.mcmcsample` example above.
-`mcmcsample` carries no more meaning than `sample`, and it's hard to discern the relationship between the two functions without looking at the code.
-There's also `DynamicPPL.initialstep`, which is similarly related to `AbstractMCMC.step`.
-Sometimes, the parent and child functions are called `foo` and `_foo`, which is also quite unhelpful.
 
 In Python, when you see `super()`, that immediately tells you that it's trying to call a parent method, so the _intent_ of the code is clear.
 Conversely, in Julia, the language doesn't give the programmer the tools to write code that is self-explanatory, and you have to instead rely on the names being chosen and/or documented well.
@@ -101,19 +111,44 @@ Notice that in a functional language, say Haskell, you _have_ to use the latter 
 ```haskell
 class Parent a where
     foo :: a -> IO ()
+    foo p = do
+        childFoo p
+        putStrLn "calling Parent.foo"
 
-parentFoo :: Parent a => a -> IO ()
-parentFoo _ = putStrLn "calling Parent.foo"
+    -- Child must implement this
+    childFoo :: a -> IO ()
 
 data Child = Child
 
 instance Parent Child where
-    foo c = do
+    childFoo c = do
         putStrLn "calling Child.foo"
-        parentFoo c
 ```
 
-But:
-(1) Haskell at least doesn't pretend that it lets you reuse function names; and
-(2) unlike Julia, Haskell actually (sort of) enforces the interface, in that if you try to define an `instance Parent IllegalChild` without a corresponding definition of `foo`, it will emit a compile-time warning.
+So one may claim that this is no different to what we are doing in Julia.
+But there is a practical difference, in that (unlike Julia) Haskell actually enforces the interface: if you try to define 
+
+```haskell
+data IllegalChild = IllegalChild
+
+instance Parent IllegalChild where
+```
+
+without a corresponding definition of `childFoo`, it will emit a compile-time warning.
 (The warning can be promoted to an compiler error, and there's talk about making this an error by default, but it hasn't happened yet, as of the time of writing.)
+
+In contrast, in Julia you can easily write
+
+```julia
+abstract type Parent end
+
+function foo(p::Parent)
+    println("calling Parent.foo")
+    child_foo(p)
+end
+
+struct IllegalChild <: Parent end
+```
+
+which will then throw a runtime error if `foo(IllegalChild())` is called.
+The only real way to enforce this interface is to explicitly add a test for it, which is obviously doable, but again leads to my point that Julia does not tend to give you the tools to write good code.
