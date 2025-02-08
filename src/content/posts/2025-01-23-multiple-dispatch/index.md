@@ -100,13 +100,23 @@ child_foo(::Child) = println("calling Child.foo")
 One might ask why this is any worse than the Python way.
 To me, it boils down to how much meaning the code carries.
 `parent_foo` is just a random identifier: it could have been swapped out for any other word, and _on its own_ it doesn't tell you anything about what it does, unless you choose the name specifically like we did here.
-
 In Python, when you see `super()`, that immediately tells you that it's trying to call a parent method, so the _intent_ of the code is clear.
-Conversely, in Julia, the language doesn't give the programmer the tools to write code that is self-explanatory, and you have to instead rely on the names being chosen and/or documented well.
+
+_Edit_: I've now been told about a _third_ way, which is to use `invoke`:
+
+```julia
+function foo(c::Child)
+    println("calling Child.foo")
+    invoke(foo, (Parent,), c)
+end
+```
+
+I'm not fully aware of the limitations of `invoke` (its docstring suggests that there are some weird edge cases), but it _does_ seem like a nice way to do this.
+I think that it could be worth trying out a bit more in the Turing codebase.
 
 ## Haskell
 
-Notice that in a functional language, say Haskell, you _have_ to use the latter method, where you define functions with different names for the parent and child:
+Notice that in a functional language, say Haskell, you _have_ to use the second technique, where you define functions with different names for the parent and child:
 
 ```haskell
 class Parent a where
@@ -125,7 +135,6 @@ instance Parent Child where
         putStrLn "calling Child.foo"
 ```
 
-So one may claim that this is no different to what we are doing in Julia.
 But there is a practical difference, in that (unlike Julia) Haskell actually enforces the interface: if you try to define 
 
 ```haskell
@@ -151,4 +160,4 @@ struct IllegalChild <: Parent end
 ```
 
 which will then throw a runtime error if `foo(IllegalChild())` is called.
-The only real way to enforce this interface is to explicitly add a test for it, which is obviously doable, but again leads to my point that Julia does not tend to give you the tools to write good code.
+The only real way to enforce this interface is to explicitly add a test for it, which is obviously doable, but it does mean that it's not enforced by the language itself, and is thus reliant on the programmer to 'do the right thing'.
