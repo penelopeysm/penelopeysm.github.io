@@ -111,7 +111,7 @@ function foo(c::Child)
 end
 ```
 
-I'm not fully aware of the limitations of `invoke` (its docstring suggests that there are some weird edge cases), but it _does_ seem like a nice way to do this.
+I'm not fully aware of the limitations of `invoke` ([its docstring](https://docs.julialang.org/en/v1/base/base/#Core.invoke) suggests that there are some weird edge cases), but it _does_ seem like a nice way to do this.
 I think that it could be worth trying out a bit more in the Turing codebase.
 
 ## Haskell
