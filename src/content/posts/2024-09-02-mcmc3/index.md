@@ -2,6 +2,7 @@
 title: MCMC... with AbstractMCMC; part 3
 publishDate: "2024-09-02"
 tags: ["inference"]
+published: false
 ---
 
 In [the previous post in this series](/posts/2024-08-22-mcmc2), we tidied up our implementation of the Metropolis–Hastings (MH) algorithm, and applied it to an actual Bayesian inference problem (on migratory patterns of Bewick's swans).

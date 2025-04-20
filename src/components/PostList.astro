@@ -4,7 +4,8 @@ import PostListItem from "./PostListItem.astro";
 
 async function getAllPosts() {
   let posts = await getCollection("posts");
-  posts.sort((a, b) => {
+  let filtered_posts = posts.filter((post) => post.data.published);
+  filtered_posts.sort((a, b) => {
     if (a.data.publishDate < b.data.publishDate) {
       return 1;
     } else if (a.data.publishDate > b.data.publishDate) {
@@ -15,7 +16,7 @@ async function getAllPosts() {
       return bSortOrder - aSortOrder;
     }
   });
-  return posts;
+  return filtered_posts;
 }
 
 const allPosts = await getAllPosts();

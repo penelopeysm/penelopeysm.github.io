@@ -2,6 +2,7 @@
 title: MCMC... properly; part 2
 publishDate: "2024-08-22"
 tags: ["inference"]
+published: false
 ---
 
 In [the previous post in this series](/posts/2024-08-19-mcmc1), we looked at implementing the Metropolis–Hastings (MH) algorithm for sampling from a distribution.

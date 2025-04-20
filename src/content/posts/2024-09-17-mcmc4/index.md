@@ -2,6 +2,7 @@
 title: MCMC... with LogDensityProblems; part 4
 publishDate: "2024-09-17"
 tags: ["inference"]
+published: false
 ---
 
 In [Part 3 of this series](/posts/2024-09-02-mcmc3), we explored how the Metropolis–Hastings (MH) algorithm can be implemented in a manner that conforms to the expected AbstractMCMC API.

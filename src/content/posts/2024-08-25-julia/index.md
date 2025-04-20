@@ -2,6 +2,7 @@
 title: Annoyances with Julia
 publishDate: "2024-08-25"
 tags: []
+published: false
 ---
 
 Having worked in Julia professionally for a bit of time, I feel like I have enough experience to complain about some of the pain points I've faced.

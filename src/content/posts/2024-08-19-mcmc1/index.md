@@ -2,6 +2,7 @@
 title: MCMC... from scratch; part 1
 publishDate: "2024-08-19"
 tags: ["inference"]
+published: false
 ---
 
 Since I'm working on Bayesian inference things, I may as well write some articles about the underlying theory to make sure I actually understand what I'm working on.

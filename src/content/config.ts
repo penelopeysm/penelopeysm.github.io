@@ -8,6 +8,7 @@ const postCollection = defineCollection({
         sortOrder: z.number().optional(),
         tags: z.array(z.string()),
         draft: z.boolean().optional(),
+        published: z.boolean().default(true),
     }),
 });
 
