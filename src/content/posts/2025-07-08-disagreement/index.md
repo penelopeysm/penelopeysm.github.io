@@ -1,5 +1,5 @@
 ---
-title: "Disagreement"
+title: "Pull request disagreement"
 publishDate: "2025-07-08"
 tags: ["programming"]
 ---
