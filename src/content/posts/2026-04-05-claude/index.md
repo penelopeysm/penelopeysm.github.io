@@ -41,7 +41,25 @@ I mostly use it as a place to bounce ideas off and to review my own PRs (since, 
   The biggest problem with this is that you don't know what you don't know.
   It's easy to go down a route where you think you're doing fine, and Claude makes some improvements and you think you're actually doing quite well, but actually a better programmer would come along and point out flaws.
 
-- For this reason, I actually suspect (but have not yet verified) that Claude is *most harmful* in the prototyping stage of a new work.
+- For this reason, I actually suspect (but have not yet verified) that Claude is *most harmful* in the prototyping stage of a new project.
   If you have an existing project, it provides a good framework within which Claude can work: it can pick up the general quality of the codebase, design choices, etc. and work from there.
   However, if you set it completely loose on a new project it will probably come up with some ideas that are not great, and then it becomes hard to remove these as time goes on.
   But I don't have enough tokens to really test this out for sure.
+
+## What's the future like?
+
+I don't think that Opus 4.6 will replace all human software engineers.
+However, I suspect it can replace human software engineers where the quality of the code doesn't need to be great.
+In particular, as someone who used to work in scientific research, I have definitely seen a lot of bad code which could easily be rewritten with Claude to a higher standard.
+Technical debt doesn't matter in these situations, because the aim is to get a paper or feature out and forget that the code ever existed.
+
+If we don't want to accept this future, then that leads to the question of how we can incentivise researchers to make their code better.
+Despite this literally being the purpose of my current job, I don't yet have a good answer to this.
+One could make arguments about how better code leads to increased collaboration and usage.
+With that sort of argument, the general sentiment behind it is: let's try and unify the aims of scientific research and software development.
+But right now, I can't help but feel that ultimately funding for open-source code has to come with the express purpose of it being high-quality and open-source, rather than being tied to research grants, new papers, or new features.
+In other words, stop trying to pander to the academic incentives, and instead say that this funding is about making things maintainable, etc.
+I'm not sure that there is been a good solution to this yet...
+
+The alternative of course is to just roll with it, and let the LLMs take over.
+Which might just happen.
