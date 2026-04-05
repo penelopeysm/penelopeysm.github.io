@@ -46,6 +46,11 @@ I mostly use it as a place to bounce ideas off and to review my own PRs (since, 
   However, if you set it completely loose on a new project it will probably come up with some ideas that are not great, and then it becomes hard to remove these as time goes on.
   But I don't have enough tokens to really test this out for sure.
 
+Can any of this be mitigated?
+
+I have not yet explored this, but I'm thinking of collecting all the bits of wisdom that I've learnt over the years of working on this project about how to write good-quality code, and shoving them into something that Claude can read from.
+That means that even if somebody new comes along who doesn't know the general standard of the codebase, Claude can, in principle, get them up to speed.
+
 ## What's the future like?
 
 I don't think that Opus 4.6 will replace all human software engineers.
@@ -59,7 +64,7 @@ One could make arguments about how better code leads to increased collaboration 
 With that sort of argument, the general sentiment behind it is: let's try and unify the aims of scientific research and software development.
 But right now, I can't help but feel that ultimately funding for open-source code has to come with the express purpose of it being high-quality and open-source, rather than being tied to research grants, new papers, or new features.
 In other words, stop trying to pander to the academic incentives, and instead say that this funding is about making things maintainable, etc.
-I'm not sure that there is been a good solution to this yet...
+I'm not sure that there has been a good solution to this yet...
 
 The alternative of course is to just roll with it, and let the LLMs take over.
 Which might just happen.
