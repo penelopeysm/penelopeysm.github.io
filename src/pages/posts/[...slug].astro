@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Page from "../../components/Page.astro";
-// Have to use imported styles so that they're applied to rendered Markdown
-// content. See docs or e.g. https://github.com/withastro/docs/issues/3485
 import "../../styles/post-styles.css";
 
 export async function getStaticPaths() {
@@ -15,23 +13,81 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-GB", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
 ---
 
 <Page title={entry.data.title}>
+    <a href="/" class="back">&larr; Home</a>
+
     <h1>{entry.data.title}</h1>
-    <a href="/">Back to home</a>
+
+    <div class="meta">
+        <time>{formatDate(entry.data.publishDate)}</time>
+        {entry.data.tags.length > 0 && (
+            <span class="tags">
+                {entry.data.tags.map((tag: string) => (
+                    <span class="tag">{tag}</span>
+                ))}
+            </span>
+        )}
+    </div>
 
     {entry.data.draft === true && <p class="draft-warning">This post is a draft; it is not yet complete.</p>}
 
-    <Content />
+    <article>
+        <Content />
+    </article>
 </Page>
 
 <style>
+    .back {
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+    .back:hover {
+        text-decoration: underline;
+    }
+    h1 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.3rem;
+    }
+    .meta {
+        font-size: 0.85rem;
+        color: #7a7a9a;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        flex-wrap: wrap;
+    }
+    .tags {
+        display: flex;
+        gap: 0.3em;
+    }
+    .tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        color: #6a6a8a;
+        background: #d8d8ea;
+        padding: 0.1em 0.5em;
+        border-radius: 3px;
+    }
     .draft-warning {
-        color: #de3e7e;
-        font-size: 120%;
-        border: 2px solid #de3e7e;
-        padding: 5px 10px;
+        color: #d14;
+        font-size: 1rem;
+        border: 2px solid #d14;
+        padding: 0.5em 1em;
+        border-radius: 4px;
         width: max-content;
+    }
+    article {
+        line-height: 1.7;
     }
 </style>

@@ -10,17 +10,48 @@ function formatDate(date: string) {
 }
 ---
 
-<div>{formatDate(post.data.publishDate)}</div>
-<div>
-  {post.data.draft === true && <span class="draft-warning">(draft)</span>}
+<div class="date">{formatDate(post.data.publishDate)}</div>
+<div class="info">
+  {post.data.draft === true && <span class="draft">(draft)</span>}
   <a href={`posts/${post.slug}`}>{post.data.title}</a>
+  {post.data.tags.length > 0 && (
+    <span class="tags">
+      {post.data.tags.map((tag: string) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </span>
+  )}
 </div>
 
 <style>
-  span.draft-warning {
-    color: #de3e7e;
+  .date {
+    color: #7a7a9a;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    padding-top: 0.1em;
   }
-  li {
-    style: none;
+  .info {
+    line-height: 1.5;
+  }
+  .draft {
+    color: #d14;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .tags {
+    display: inline;
+    margin-left: 0.4em;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: #6a6a8a;
+    background: #d8d8ea;
+    padding: 0.1em 0.5em;
+    border-radius: 3px;
+    margin-left: 0.2em;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
   }
 </style>

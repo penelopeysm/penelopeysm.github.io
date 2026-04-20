@@ -22,15 +22,16 @@ async function getAllPosts() {
 const allPosts = await getAllPosts();
 ---
 
-<div id="post-list">
+<div class="post-list">
   {allPosts.map((post) => <PostListItem post={post} />)}
 </div>
 
 <style>
-  div {
+  .post-list {
     display: grid;
     grid-template-columns: max-content 1fr;
-    row-gap: 10px;
-    column-gap: 30px;
+    row-gap: 0.6rem;
+    column-gap: 1.5rem;
+    align-items: baseline;
   }
 </style>
