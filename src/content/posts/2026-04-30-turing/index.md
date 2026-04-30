@@ -40,8 +40,9 @@ The easiest way to motivate this is to notice that `Dict`s are slow (and potenti
 While `NamedTuple`s can make everything type-stable, it restricts keys to `Symbol`s: this poses a problem for Turing, whose model syntax attempts to be as permissive as possible, meaning that you can have almost any combination of indexing and field access syntax on the left-hand side of a tilde.
 That means that `NamedTuple`s are a no-go.
 
-For a long time, DynamicPPL had notions of 'untyped' and 'typed' VarInfo.
+For a long time, DynamicPPL dealt with this problem by having 'untyped' and 'typed' VarInfo.
 'Untyped' was really just a `Dict` under the hood, whereas 'typed' was a `NamedTuple` of `Dict`s (grouped by top-level symbols).
+The first time you ran a model you had to use the 'untyped' VarInfo, and then you could switch to the 'typed' one for subsequent runs, which would be much faster.
 This was 'good enough', but possibly the most outlandish idea we had was that we could actually do better.
 
 The resulting `VarNamedTuple` data structure ended up being one that combined the best of both worlds: it is as performant as a `NamedTuple` in the case where there were only top-level symbols, and is (*almost*) as generalisable as a `Dict`.
