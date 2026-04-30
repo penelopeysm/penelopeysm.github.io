@@ -191,6 +191,7 @@ As I said above I'm probably not going to vanish completely!
 I'll probably still be around to answer questions and stuff about Turing.
 And as I said above, I've really enjoyed working with the Julia community and its people.
 You are more than welcome to tag me on GitHub or Slack, and I'll do my best to respond.
+There are also some nascent side projects on [the JuliaBayes organisation](https://github.com/JuliaBayes) which I'll still be involved with.
 
 But as far as Julia open-source contributions go, I'd really like to take it in a direction that personally excites me more.
 After all, this is going to be my spare time, not my day job :)
