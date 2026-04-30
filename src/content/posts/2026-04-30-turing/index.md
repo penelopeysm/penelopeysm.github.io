@@ -6,7 +6,7 @@ tags: ["programming"]
 
 Since July 2024 my day job has been to work on [Turing.jl](https://turinglang.org) and associated probabilistic programming libraries.
 Due to various reasons this is coming to an end: I'm moving to another project from next week onwards.
-(I am currently also the only full-time developer on it, so a corollary is that as of next week, nobody will be working on it.)
+(I am currently also the only full-time developer on Turing, so a corollary is that as of next week, nobody will be working on it.)
 
 This has probably been the most intellectually stimulating thing I've worked on full-time (perhaps even more so than my PhD).
 The large-scale, open-source aspect of it is also something that is quite unusual for a project, and I'm glad to have had the opportunity to work on something like that.
@@ -14,7 +14,7 @@ For one, it feels really meaningful to do work that leads to immediate, tangible
 But also, I've lurked on Reddit and other forums for many years and I've always looked up to people who are active in programming communities, and it is slightly weird, but also gratifying, to find that I'm now one of these people (in some circles, at least).
 
 Anyway, given that this feels almost like the end of a chapter, I thought I'd write a little bit (or a lot) about my thoughts on the entire thing.
-I'll also have a talk on Turing.jl at JuliaCon 2026, so this might turn out to be a sneak peek of the contents (but who knows).
+I'll also have a talk on Turing at JuliaCon 2026, so this might turn out to be a sneak peek of the contents (but who knows).
 
 ## Things that went well (code)
 
@@ -177,9 +177,15 @@ Most of the things we did on DynamicPPL were not, in and of themselves, motivate
 Of course things like correctness, modularity, and performance are good for downstream users, but they're not something we needed users to tell us about: we could go and fix it simply because we were sensible software engineers.
 I can't help but feel that we have almost lived in a bit of a bubble here.
 
+Another problem of not knowing users is that it's very hard to get a sense of real-world use cases.
+My job as a software engineer requires me to find minimal examples, so I'm very good at coming up with toy models that demonstrate enough to break something.
+However, I have almost no intuition for what a real-world model looks like!
+I don't really feel like I have a good sense of what libraries people are using Turing with, what sorts of platforms people are running Turing on, and so on.
+This makes it quite difficult to draw up a feature roadmap beyond the obvious 'correctness' / 'performance' stuff.
+
 One of the ideas I've been toying with fairly recently, but had no real time to follow up on, was to have something like a TuringCon: this could be a virtual meetup where we got people to give a short talk on what they were using Turing for, why they chose Turing over other PPLs, and what they still saw as lacking in Turing.
 
-The good news is, I'm probably not vanishing.
+Now, the good news is that I'm probably not vanishing.
 If you're interested in using Turing for Something Exciting, please do feel free to get in touch.
 I probably can't help you all that much, but we can definitely at least discuss; and if nothing else, I'd just like to know what you're up to!
 
@@ -187,7 +193,7 @@ I probably can't help you all that much, but we can definitely at least discuss;
 
 In the immediate short-term future I'm going to mostly take a break from Julia, not least because I feel quite burnt out from the past few weeks.
 
-As I said above I'm probably not going to vanish completely!
+As I said above, though, I'm probably not going to vanish completely!
 I'll probably still be around to answer questions and stuff about Turing.
 And as I said above, I've really enjoyed working with the Julia community and its people.
 You are more than welcome to tag me on GitHub or Slack, and I'll do my best to respond.
