@@ -125,8 +125,8 @@ So my unsolicited advice to anybody out there who has a _team_ of developers is:
 
 It turns out that the performance improvements in DynamicPPL have meant that Turing is [competitive with, and sometimes faster, than Stan](https://github.com/JuliaBayes/posteriordb-bench).
 (As long as you use reverse-mode Enzyme, it seems!)
-Of course there are also many other benefits to Turing, namely complete access to the Julia ecosystem, something which Stan can't even attempt to offer.
-However, I don't know if that has translated into any real growth in terms of users.
+There are also many other benefits to Turing, namely complete access to the Julia ecosystem, something which Stan can't even attempt to offer.
+However, I don't know if these have translated into any real growth in terms of users.
 
 While I've done community newsletters for a while, I can't help but feel that these were circulated in places that were already 'friendly' to us: our own GitHub, website, and the #turing Slack channel.
 I don't think we ever made much of an effort to promote Turing.jl 'externally'.
