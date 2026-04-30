@@ -147,7 +147,7 @@ I'll stop short of saying that I did something _wrong_ by not taking on this res
 
 When we started on the project, one of the key aims we had was to make sure that after the project ended (in effect now!), Turing would be in a place where it was possible to be maintained purely by the open-source community.
 I'm really not certain that that's happened at all.
-While we've made great strides in terms of docs and onboarding (the docs have [a full section on contributing now](https://turinglang.org/docs/contributing/start-contributing/)), I'm not sure that there have really been any regular contributors.
+While we've made great strides in terms of docs and onboarding (the docs have [a full section on contributing now](https://turinglang.org/docs/contributing/start-contributing/)), I'm not sure that there have really been enough regular contributors to make me feel comfortable about this.
 
 This is quite obviously a problem across the entire Julia ecosystem.
 Packages (even important ones) are maintained by small teams, individuals, or in some cases nobody.
