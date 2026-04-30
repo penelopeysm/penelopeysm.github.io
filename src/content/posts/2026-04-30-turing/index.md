@@ -21,13 +21,13 @@ I'll also have a talk on Turing at JuliaCon 2026, so this might turn out to be a
 ### DynamicPPL APIs
 
 Over the course of the past two years we've almost completely overhauled everything in [DynamicPPL](https://github.com/TuringLang/DynamicPPL.jl), the package that defines the core modelling primitives.
-In particular I'm most proud of how we broke up `VarInfo`, an all-purpose struct that tried to do everything that every algorithm needed, into its constituent components, namely:
+In particular I'm most proud of how we broke up `VarInfo`, an all-purpose struct that represented the state of model execution and tried to do everything that every algorithm needed, into its constituent components, namely:
 
 - initialisation strategies to specify how parameter values are generated
 - accumulators to collect the outputs of model evaluation
 - transform strategies to specify whether and how parameters are transformed
 
-These are all thoroughly [explained in the DynamicPPL docs](https://turinglang.org/DynamicPPL.jl/stable/evaluation/), so I won't go into detail here.
+These are all thoroughly explained in [the DynamicPPL docs](https://turinglang.org/DynamicPPL.jl/stable/evaluation/), so I won't go into detail here.
 
 The outcome of this decoupling is that instead of bundling everything into a `VarInfo`, you can now pick and choose which bits of it you want.
 This is _the_ root of all the performance improvements in Turing in recent months: we simply stopped calculating and storing all the things we didn't need to calculate and store.
@@ -35,7 +35,7 @@ It sounds almost trivial when put that way, and indeed maybe the underlying idea
 
 ### VarNamedTuple
 
-On top of this API redesign, we also completely rewrote the internal data structure that is used to map variable names to models.
+On top of this API redesign, we also completely rewrote the internal data structure that is used to map variable names to values.
 The easiest way to motivate this is to notice that `Dict`s are slow (and potentially type-unstable if the values are heterogeneous).
 While `NamedTuple`s can make everything type-stable, it restricts keys to `Symbol`s: this poses a problem for Turing, whose model syntax attempts to be as permissive as possible, meaning that you can have almost any combination of indexing and field access syntax on the left-hand side of a tilde.
 That means that `NamedTuple`s are a no-go.
