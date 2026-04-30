@@ -205,3 +205,5 @@ After all, this is going to be my spare time, not my day job :)
 In particular, that means compiler-related stuff.
 I've [offered to help maintain JuliaFormatter.jl](https://discourse.julialang.org/t/juliaformatter-jl-needs-help/136744) (although that's still in the works).
 One day I'd like to get to a point where I understand LLVM and MLIR (more so than I do right now, at least, which is quite superficial).
+Thankfully, there are many things in Julia that are related to this.
+So... see you on the other side, perhaps!
