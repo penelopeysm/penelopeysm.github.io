@@ -154,9 +154,8 @@ Packages (even important ones) are maintained by small teams, individuals, or in
 To some extent, this just reflects the relative lack of popularity of Julia: there are just fewer people doing the work.
 Another problem is that Julia's users lean very academic in nature, and it is quite difficult to get them to contribute upstream, whether it's because they don't have time or because their work is private and they don't want to dump their data (or an MWE) on a GitHub issue.
 
-However, the fact remains that if you were to judge us solely on whether the community could maintain Turing now, it would probably be a fail.
-
-I think part of the solution to this is to bring in people who care about probabilistic programming.
+However, the fact remains that if you were to judge us solely on whether the community could maintain Turing now, it would probably be a fail, and I don't have a good answer for this at all.
+I think part of the solution to this might be to bring in people who care about probabilistic programming.
 In other words, I think this ties into the previous point.
 I think the average Julia person has no real motivation to work on Turing, which is totally fair — I have no real motivation to work on, say, SciML!
 
