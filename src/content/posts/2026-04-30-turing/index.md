@@ -182,6 +182,7 @@ My job as a software engineer requires me to find minimal examples, so I'm very 
 However, I have almost no intuition for what a real-world model looks like!
 I don't really feel like I have a good sense of what libraries people are using Turing with, what sorts of platforms people are running Turing on, and so on.
 This makes it quite difficult to draw up a feature roadmap beyond the obvious 'correctness' / 'performance' stuff.
+For example, I really have no idea how much demand there is for running Turing on GPUs.
 
 One of the ideas I've been toying with fairly recently, but had no real time to follow up on, was to have something like a TuringCon: this could be a virtual meetup where we got people to give a short talk on what they were using Turing for, why they chose Turing over other PPLs, and what they still saw as lacking in Turing.
 
