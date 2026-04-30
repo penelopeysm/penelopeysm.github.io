@@ -66,22 +66,134 @@ There are still many other smaller things, which I can't list exhaustively, but 
 
 - We made completely new versions of `AbstractPPL.VarName` (the data structure used to represent variable names) and the Bijectors.jl interface (the old one was not perfectly well-defined, and also caused performance losses). The average user won't notice this, but it makes everything under the hood work more smoothly.
 
-- I've [written FlexiChains](https://pysm.dev/FlexiChains.jl/) as a complete replacement for MCMCChains. (Although I will point out that this was really a side project for me, which is why it's on my personal GitHub account 🙂) If you aren't using it, you probably should. I genuinely don't believe that there is a real use case for MCMCChains any more (but am happy to be corrected).
+- I've [written FlexiChains](https://pysm.dev/FlexiChains.jl/) as a complete replacement for MCMCChains. (Although I will point out that this was really a side project for me, which is why it's on my personal GitHub account!) If you aren't using it, you probably should. I genuinely don't believe that there is a real use case for MCMCChains any more (but am happy to be corrected).
 
 
 ## Things that went well (not code)
 
-[...]
+As mentioned above, during my time on Turing I've had the opportunity to work with many people in the Julia community.
+This has been incredibly rewarding, both in terms of being exposed to new ideas, but also just on a personal level!
+I've met quite a few of these people at various places, whether at my London office or at JuliaCon last year.
+I'd like to also give a shoutout to all the people I've spoken to on Slack but haven't met in person.
+You are more than welcome to let me know if you are passing by London!
+
+One of the most unique things about Julia is the extent to which different packages are intertwined, particularly via the package extension mechanism.
+I suspect that if I had been working on any other language I would have been in more of a walled garden where I'd focus much more on just my own library.
+I've also found people in the Julia community to mostly be very nice and open to collaborative discussion.
+This might partly be because of the way the language works, but I think the general community vibes also tend to encourage this.
+
+To be fair this hasn't always been rainbows and sunshine, either: there have definitely been disagreements and times where I feel caught between two sides.
+But I think I have managed to come out of them not too badly, and have also learnt a lot about dealing with such situations.
+I've always tried to be completely honest and unprejudiced and I hope that that comes off.
+In fact some of the situations that I regret have come from me _not_ being upfront enough.
+If I've been too annoying at any point, I'm sorry!
 
 ## Where could we have done better?
 
-- Backwards compatibility and API stability
-  - Lack of review doesn't help.
+To end off, though, I don't think it would really be much of a growth experience if I didn't have some points about where things did _not_ go perfectly.
+I feel that my colleagues and I tried our best to do everything we could, and some of these are genuinely difficult problems to solve which I don't have answers to.
+In fact these points are the ones which I wanted to focus most on in my JuliaCon talk!
 
-- Docs especially for people new to Bayesian inference
+### Backwards compatibility and API stability
 
-- Identifying and engaging with users
+As mentioned above, we've made a lot of breaking changes to DynamicPPL and Turing.
 
-- Cultivating open source contributions
+Now, one could definitely argue that many of these breaking changes were *necessary*.
+We also implemented a release cadence which involved slower, bigger releases, to reduce the amount of CompatHelper churn across the ecosystem.
+And we also made sure to put together [incredibly detailed changelogs](https://github.com/TuringLang/DynamicPPL.jl/releases) to help people migrate to newer versions.
 
-[...]
+That said, I think we definitely still adopted the attitude that it's fine to move fast and break things.
+There are a couple of aspects to this that I'm wary of:
+
+- I don't think it translates well to production-level software where one has a large existing userbase to consider. While in my CV I definitely tout the 'Turing.jl has more than 2000 stars...' line, I'm also quite cognisant that it is not currently at a 'widely used in production' level.
+
+- I do think that a cleverer, or wiser, team of software engineers might have been able to reduce the amount of churn, by having a concrete long-term plan for how to do things. I think some of the changes we made (e.g. accumulators, init strategies, `VarNamedTuple`) were quite intentional, but some of them (e.g. transform strategies, `OnlyAccsVarInfo`) were honestly rather coincidental and were developed because it was what I thought of in the shower the previous day.
+
+In the last few months working as the only developer I have felt this even more acutely.
+In the past when I had some weird ideas at least I'd have colleagues to bounce ideas off and to refine them, and that would at least save us the pain of having to change it later in another breaking release.
+Without that, I tried my best, but I think especially with transform strategies, I introduced some changes in v0.40 which I immediately tore up in v0.41, which felt rather bad.
+
+As with many software engineers nowadays, I try to get Claude to review my PRs.
+The problem with Claude is that for the most part it really shares your blind spots.
+It sees that you're trying to do X, and will never question whether Y might be better.
+That means that often it's only really reliable at detecting 'known unknowns': things that you could fix if you did a very careful manual review.
+To deal with 'unknown unknowns' you really need more perspectives in the room.
+So my unsolicited advice to anybody out there who has a _team_ of developers is: please do try to keep it as a team, you will probably get better outcomes :).
+
+### Publicity
+
+It turns out that the performance improvements in DynamicPPL have meant that Turing is [competitive with, and sometimes faster, than Stan](https://github.com/JuliaBayes/posteriordb-bench).
+(As long as you use reverse-mode Enzyme, it seems!)
+Of course there are also many other benefits to Turing, namely complete access to the Julia ecosystem, something which Stan can't even attempt to offer.
+However, I don't know if that has translated into any real growth in terms of users.
+
+While I've done community newsletters for a while, I can't help but feel that these were circulated in places that were already 'friendly' to us: our own GitHub, website, and the #turing Slack channel.
+I don't think we ever made much of an effort to promote Turing.jl 'externally'.
+Basically, I think we did a good job of making probabilistic programming look good to Julia users, but I don't think we did a good job of making Julia look good to probabilistic programming users.
+
+Part of this, unfortunately, comes from my own insecurity about Bayesian inference.
+The truth is that I'm a software developer and I don't really know much about inference methods beyond the basics.
+For example, I'm capable of [fixing correctness issues with Turing's Gibbs sampler](https://github.com/TuringLang/Turing.jl/issues/2801), but the way I reason about it is by looking at the code and what it does, rather than a more principled approach of sitting down and thinking about what's needed to make the posterior stationary.
+
+This means that I really don't feel like I have the confidence to go to, for example, somewhere like StanCon, give a talk about Turing, and field questions.
+There are two ways to deal with this.
+One is to say that it's my job, and I should suck it up / git gud, and just do it.
+The other would be to rope in someone else in the team who _is_ actually an expert on Bayesian inference.
+Unfortunately though the latter is moot because there wasn't really a team.
+I'll stop short of saying that I did something _wrong_ by not taking on this responsibility, but I definitely wish that we _had_ had the resources to do this.
+
+### Cultivating open-source contributions
+
+When we started on the project, one of the key aims we had was to make sure that after the project ended (in effect now!), Turing would be in a place where it was possible to be maintained purely by the open-source community.
+I'm really not certain that that's happened at all.
+While we've made great strides in terms of docs and onboarding (the docs have [a full section on contributing now](https://turinglang.org/docs/contributing/start-contributing/)), I'm not sure that there have really been any regular contributors.
+
+This is quite obviously a problem across the entire Julia ecosystem.
+Packages (even important ones) are maintained by small teams, individuals, or in some cases nobody.
+To some extent, this just reflects the relative lack of popularity of Julia: there are just fewer people doing the work.
+Another problem is that Julia's users lean very academic in nature, and it is quite difficult to get them to contribute upstream, whether it's because they don't have time or because their work is private and they don't want to dump their data (or an MWE) on a GitHub issue.
+
+However, the fact remains that if you were to judge us solely on whether the community could maintain Turing now, it would probably be a fail.
+
+I think part of the solution to this is to bring in people who care about probabilistic programming.
+In other words, I think this ties into the previous point.
+I think the average Julia person has no real motivation to work on Turing, which is totally fair — I have no real motivation to work on, say, SciML!
+
+### Identifying users
+
+In general, I think there is also a broader question about funding open-source software.
+For example, how do you get people like me to spend their day job developing and maintaining libraries?
+I've thought about this on and off for a long time but I still don't really have a good answer.
+
+One possible way out here is to notice that it's quite hard to justify 'let's maintain this software' on a funding application / grant, but if one notices that said software is being used _for_ exciting things, the motivation for funding it immediately surfaces.
+
+The problem here is that I think we still don't have a very, very clear idea of what these exciting things are.
+We do have some knowledge of our users: at one point we tried to collect a list of publications that were using Turing.jl, and also just the general community engagement that I do has helped with this.
+
+However, I think we could definitely go deeper.
+In particular, I'd really be very keen to see _demand for specific new functionality that is driven by downstream usage_.
+
+Most of the things we did on DynamicPPL were not, in and of themselves, motivated by the way people were using Turing.
+Of course things like correctness, modularity, and performance are good for downstream users, but they're not something we needed users to tell us about: we could go and fix it simply because we were sensible software engineers.
+I can't help but feel that we have almost lived in a bit of a bubble here.
+
+One of the ideas I've been toying with fairly recently, but had no real time to follow up on, was to have something like a TuringCon: this could be a virtual meetup where we got people to give a short talk on what they were using Turing for, why they chose Turing over other PPLs, and what they still saw as lacking in Turing.
+
+The good news is, I'm probably not vanishing.
+If you're interested in using Turing for Something Exciting, please do feel free to get in touch.
+I probably can't help you all that much, but we can definitely at least discuss; and if nothing else, I'd just like to know what you're up to!
+
+## Where to now?
+
+In the immediate short-term future I'm going to mostly take a break from Julia, not least because I feel quite burnt out from the past few weeks.
+
+As I said above I'm probably not going to vanish completely!
+I'll probably still be around to answer questions and stuff about Turing.
+And as I said above, I've really enjoyed working with the Julia community and its people.
+You are more than welcome to tag me on GitHub or Slack, and I'll do my best to respond.
+
+But as far as Julia open-source contributions go, I'd really like to take it in a direction that personally excites me more.
+After all, this is going to be my spare time, not my day job :)
+In particular, that means compiler-related stuff.
+I've [offered to help maintain JuliaFormatter.jl](https://discourse.julialang.org/t/juliaformatter-jl-needs-help/136744) (although that's still in the works).
+One day I'd like to get to a point where I understand LLVM and MLIR (more so than I do right now, at least, which is quite superficial).
