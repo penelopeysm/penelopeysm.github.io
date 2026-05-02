@@ -54,6 +54,7 @@ If you do an MLE optimisation on a model it returns a VNT.
 If you want to initialise MCMC sampling from somewhere, you can pass in a VNT, and so on.
 
 This makes for a *much* more cohesive experience: in the past, `rand(model)` would return a `NamedTuple`, MLE optimisation would return a `NamedArray`, and MCMC sampling had to be initialised from `AbstractVector{<:Real}`.
+(And if you were unlucky, [just feeding the NamedArray into MCMC sampling would error](https://github.com/TuringLang/Turing.jl/issues/2734)!)
 
 ### Other things
 
