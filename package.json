@@ -22,12 +22,5 @@
     "rehype-katex": "^7.0.1",
     "rehype-mathjax": "^6.0.0",
     "remark-math": "^6.0.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "baseline-browser-mapping": "2.10.36",
-      "electron-to-chromium": "1.5.371",
-      "form-data": "4.0.5"
-    }
   }
 }
