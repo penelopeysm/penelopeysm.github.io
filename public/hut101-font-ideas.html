@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hut101 display serif candidates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Young+Serif&family=Vollkorn:ital,wght@0,400..700;1,400..700&family=Besley:ital,wght@0,400..700;1,400..700&family=Alegreya:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    background: #f7f1e5;
+    color: #221b12;
+    font-family: Karla, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+  .candidate {
+    border-bottom: 2px dotted #d5c5a8;
+    padding: 2.5rem 0;
+  }
+  .label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #635445;
+    margin-bottom: 1rem;
+  }
+  .hero { font-size: 3.4rem; line-height: 1.08; margin: 0 0 1rem; font-weight: 600; }
+  .hero em { color: #b03f10; }
+  .heading { font-size: 2.1rem; margin: 0 0 0.75rem; font-weight: 400; }
+  .cardtitle { font-size: 1.3rem; margin: 0; font-weight: 400; }
+  .note { font-size: 0.85rem; color: #635445; margin-top: 0.75rem; }
+
+  .fraunces  { font-family: Fraunces, serif; font-variation-settings: "SOFT" 70; }
+  .young     { font-family: "Young Serif", serif; }
+  .vollkorn  { font-family: Vollkorn, serif; }
+  .besley    { font-family: Besley, serif; }
+  .alegreya  { font-family: Alegreya, serif; }
+  .newsreader{ font-family: Newsreader, serif; }
+</style>
+</head>
+<body>
+  <p class="label">Watch the j in "project", the y descenders, and the italic "guide"</p>
+
+  <div class="candidate">
+    <p class="label">Fraunces (current)</p>
+    <h1 class="hero fraunces">Open source for researchers,<br>with a <em><i>guide</i></em></h1>
+    <h2 class="heading fraunces">Submit a new project</h2>
+    <p class="cardtitle fraunces">Write unit tests for the CSV parser module</p>
+    <p class="note">The reference. Wonky j and friends.</p>
+  </div>
+
+  <div class="candidate">
+    <p class="label">Young Serif</p>
+    <h1 class="hero young">Open source for researchers,<br>with a <em><i>guide</i></em></h1>
+    <h2 class="heading young">Submit a new project</h2>
+    <p class="cardtitle young">Write unit tests for the CSV parser module</p>
+    <p class="note">Closest to Fraunces' soft chunkiness. Only one weight, and no true italic (browser will fake both).</p>
+  </div>
+
+  <div class="candidate">
+    <p class="label">Vollkorn</p>
+    <h1 class="hero vollkorn">Open source for researchers,<br>with a <em><i>guide</i></em></h1>
+    <h2 class="heading vollkorn">Submit a new project</h2>
+    <p class="cardtitle vollkorn">Write unit tests for the CSV parser module</p>
+    <p class="note">Warm, sturdy, full feature set. The safe swap.</p>
+  </div>
+
+  <div class="candidate">
+    <p class="label">Besley</p>
+    <h1 class="hero besley">Open source for researchers,<br>with a <em><i>guide</i></em></h1>
+    <h2 class="heading besley">Submit a new project</h2>
+    <p class="cardtitle besley">Write unit tests for the CSV parser module</p>
+    <p class="note">Clarendon slab; sturdiest and most "outdoorsy poster" of the lot.</p>
+  </div>
+
+  <div class="candidate">
+    <p class="label">Alegreya</p>
+    <h1 class="hero alegreya">Open source for researchers,<br>with a <em><i>guide</i></em></h1>
+    <h2 class="heading alegreya">Submit a new project</h2>
+    <p class="cardtitle alegreya">Write unit tests for the CSV parser module</p>
+    <p class="note">Lively, bookish, academic-friendly.</p>
+  </div>
+
+  <div class="candidate">
+    <p class="label">Newsreader</p>
+    <h1 class="hero newsreader">Open source for researchers,<br>with a <em><i>guide</i></em></h1>
+    <h2 class="heading newsreader">Submit a new project</h2>
+    <p class="cardtitle newsreader">Write unit tests for the CSV parser module</p>
+    <p class="note">Editorial and restrained; optical sizing like Fraunces.</p>
+  </div>
+</body>
+</html>
