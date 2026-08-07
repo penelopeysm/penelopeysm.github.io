@@ -1,0 +1,22 @@
+---
+// Custom 404 page that redirects /FlexiChains.jl/* paths to juliabayes.org
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Page not found</title>
+    <script is:inline>
+      (function () {
+        var path = window.location.pathname;
+        if (path.startsWith("/FlexiChains.jl/")) {
+          window.location.replace("https://juliabayes.org" + path);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>404 - Page not found</h1>
+    <p>The page you're looking for doesn't exist. <a href="/">Go home</a>.</p>
+  </body>
+</html>
