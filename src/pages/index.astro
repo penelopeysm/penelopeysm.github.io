@@ -4,86 +4,90 @@ import PostList from "../components/PostList.astro";
 ---
 
 <Page title="Home">
-  <h1>Hello!</h1>
+    <h1>Hello!</h1>
 
-  <p>You&rsquo;ve reached my personal website. Welcome.</p>
+    <p>You&rsquo;ve reached my personal website. Welcome.</p>
 
-  <p>
-    I&rsquo;m a software engineer at <a
-      href="https://alan-turing-institute.github.io/REG"
-      >The Alan Turing Institute</a
-    >. I love writing Haskell, but realistically most of my job is <s>Julia</s>
-    <s>Python</s> prompting Claude. If I have lots of spare time I might write a
-    bit about programming or other stuff, but no promises. You can find me on GitHub
-    at <a href="https://github.com/penelopeysm" target="_blank">@penelopeysm</a
-    >.
-  </p>
+    <p>
+        I&rsquo;m a software engineer at Jane Street. I love writing Haskell,
+        but realistically most of my job is <s>Julia</s>
+        <s>Python</s>
+        <s>prompting Claude</s> OCaml(!). You can find me on GitHub at <a
+            href="https://github.com/penelopeysm"
+            target="_blank">@penelopeysm</a
+        > (although note that none of my Jane Street work is there).
+    </p>
 
-  <p>
-    This blog is written using Astro, with a fairly bare-bones design. It used
-    to be even more bare-bones, then Claude Code came along and I realised I
-    could make it look a little bit nicer without too much effort.
-  </p>
+    <p>
+        This blog is written using Astro, with a fairly bare-bones design. It
+        used to be even more bare-bones, then Claude Code came along and I
+        realised I could make it look a little bit nicer without too much
+        effort.
+    </p>
 
-  <h2>More about me</h2>
+    <h2>More about me</h2>
 
-  <ul>
-    <li>
-      I was a core developer on <a href="https://turinglang.org" target="_blank"
-        >Turing.jl</a
-      > for around two years. My colleagues and I rewrote most of the core data structures
-      and APIs to improve correctness, modularity, and performance.
-      <a href="posts/2026-04-30-turing">More about that here</a>.
-    </li>
-    <li>
-      I dabble in compilers. I&rsquo;m not an expert (yet...?); I&rsquo;m just
-      following textbooks. You can see my progress on Nora Sandler&rsquo;s <i
-        >Writing A C Compiler</i
-      >
-      <a href="https://pysm.dev/cccc" target="_blank">here</a>. (Spoiler alert:
-      said progress is slow.) I&rsquo;m currently maintaining <a
-        href="https://github.com/JuliaEditorSupport/JuliaFormatter.jl"
-        target="_blank">JuliaFormatter.jl</a
-      >.
-    </li>
-    <li>
-      I&rsquo;ve worked on diversity and inclusion at my workplace for around
-      two years. I&rsquo;m particularly passionate about levelling the playing
-      field through education and open knowledge. Amongst other initiatives, I
-      developed, and continue to teach, a course on cryptography as part of the <a
-        href="https://www.turing.ac.uk/opportunities-turing/turing-summer-experience"
-        target="_blank">Turing Summer Experience</a
-      >.
-    </li>
-    <li>
-      I&rsquo;m a classical musician. This blog actually started because at one
-      point I decided to start collecting classical music concerts that
-      I&rsquo;d attended. For some time I <i>tried</i> to talk a little bit about
-      what I enjoyed (or did not enjoy) about each of them with some justification,
-      although these are of course all subjective, and are not intended as a review
-      of how <i>good</i> the performance was. I&rsquo;ve since given up on reviewing
-      them and now just record the repertoire. Unfortunately I don&rsquo;t have full
-      records of concerts before 2024. Nowadays I play in the <a
-        href="https://londonrepertoireorchestra.org.uk"
-        >London Repertoire Orchestra</a
-      >. You should come along, it's great fun!
-    </li>
+    <ul>
+        <li>
+            Before Jane Street, I was a research software engineer at <a
+                href="https://turing.ac.uk"
+                target="_blank">The Alan Turing Institute</a
+            > for around three years. My work there was almost fully open-source,
+            and included development of various packages for numerical computing in
+            <a href="https://julialang.org">the Julia programming language</a>.
+            You can see a lot of this on my GitHub profile.
+        </li>
+        <li>
+            I dabble in compilers. I&rsquo;m not an expert at all; I&rsquo;m
+            just following textbooks. You can see my progress on Nora
+            Sandler&rsquo;s <i>Writing A C Compiler</i>
+            <a href="https://pysm.dev/cccc" target="_blank">here</a>. (Spoiler
+            alert: said progress is slow.) I&rsquo;m currently maintaining <a
+                href="https://github.com/JuliaEditorSupport/JuliaFormatter.jl"
+                target="_blank">JuliaFormatter.jl</a
+            >.
+        </li>
+        <li>
+            At my old workplace, I worked on diversity and inclusion for around
+            two years. I&rsquo;m particularly passionate about levelling the
+            playing field through education and open knowledge. Amongst other
+            initiatives, I developed, and continue to teach, a course on
+            cryptography as part of the <a
+                href="https://www.turing.ac.uk/opportunities-turing/turing-summer-experience"
+                target="_blank">Turing Summer Experience</a
+            >.
+        </li>
+        <li>
+            I&rsquo;m a classical musician. This blog actually started because
+            at one point I decided to start collecting classical music concerts
+            that I&rsquo;d attended. For some time I <i>tried</i> to talk a little
+            bit about what I enjoyed (or did not enjoy) about each of them with some
+            justification, although these are of course all subjective, and are not
+            intended as a review of how <i>good</i> the performance was. I&rsquo;ve
+            since given up on reviewing them and now just record the repertoire. Unfortunately
+            I don&rsquo;t have full records of concerts before 2024. Nowadays I play
+            in the <a href="https://londonrepertoireorchestra.org.uk"
+                >London Repertoire Orchestra</a
+            >. You should come along, it's great fun!
+        </li>
 
-    <li>
-      I made <a href="https://apribot.fly.dev/" target="_blank">a Discord bot</a
-      > for a Pokémon trading server. I also have a <a
-        href="https://docs.google.com/spreadsheets/d/1IR6rCNQYFccBrc_cxNVv2gEQnVpecEAo58IDRJYWNlo/edit"
-        target="_blank"
-        >complete collection of all (breedable) Pokémon in all rare balls</a
-      >, which (depending on your perspective) can be either impressive,
-      slightly unhinged, or both, but it kept me sane during my PhD.
-    </li>
-    <li>
-      In a past life I was a quantum chemist, which I sometimes miss, even
-      though I don&rsquo;t regret moving to software engineering.
-    </li>
-  </ul>
+        <li>
+            I made <a href="https://apribot.fly.dev/" target="_blank"
+                >a Discord bot</a
+            > for a Pokémon trading server. I also have a <a
+                href="https://docs.google.com/spreadsheets/d/1IR6rCNQYFccBrc_cxNVv2gEQnVpecEAo58IDRJYWNlo/edit"
+                target="_blank"
+                >complete collection of all (breedable) Pokémon in all rare
+                balls</a
+            >, which (depending on your perspective) can be either impressive,
+            slightly unhinged, or both, but it kept me sane during my PhD.
+        </li>
+        <li>
+            In a past life I was a quantum chemist, which I sometimes miss, even
+            though I don&rsquo;t regret moving to software engineering.
+        </li>
+    </ul>
 
-  <h2>Posts</h2>
-  <PostList />
+    <h2>Posts</h2>
+    <PostList />
 </Page>
