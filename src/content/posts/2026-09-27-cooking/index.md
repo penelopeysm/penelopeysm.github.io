@@ -1,6 +1,6 @@
 ---
 title: "Introduction to My Kitchen"
-publishDate: "2027-09-27"
+publishDate: "2026-09-27"
 tags: ["cooking"]
 ---
 
@@ -11,12 +11,12 @@ In my previous job, which was mostly remote, I cooked virtually every meal I ate
 In fact that's more or less been my life since I first got access to a kitchen in third-year undergrad.
 There are a couple of reasons for that: firstly, it's much cheaper; and secondly, it lets me cook all the things I like to eat.
 
-Specifically, ever since moving to London around 3 years ago, I've made a real effort to try to cook more Malaysian food 'from scratch', especially curries.
+Specifically, ever since moving to London around 3 years ago, I've made a real effort to cook more Malaysian food 'from scratch', especially curries.
 Part of this is me showing off to myself (and now readers...), but part of it is also that it's _incredibly_ satisfying to be able to replicate something that I grew up with.
 (It's actually surprisingly easy to find most ingredients at my local Waitrose, although there are some specialist ingredients that need to be sourced from Asian supermarkets.)
 
 One problem with making curries from scratch is that it's really very time-intensive.
-Consequently, I'd often balance those dishes with much simpler things, like spaghetti or honestly just some less interesting stir-fries (a green bean and prawn omelette was very good for this!)
+Consequently, I'd often balance those dishes with much simpler things, like spaghetti or honestly just some less interesting stir-fries (a green bean and prawn omelette was very good for this!).
 
 When I accepted the Jane Street job offer, I was quite aware that I'd have to go into the office most days.
 The office provides breakfast and lunch, which does greatly reduce the burden of meal preparation,[^1] but I was also quite aware that I'd not be able to cook anything more than some simple pasta dish when I got back.
@@ -40,7 +40,7 @@ The recipe I used is from [Singaporean and Malaysian Recipes](https://www.singap
 (Generally I find that website is very good!)
 My only deviation from the recipe is to cut the amount of onion and ginger by about half (I don't really find it needs so much — though I should emphasise this is mostly just personal preference).
 
-It's not the first time I made this, so I know approximately what I was doing, but today's was special because I happened to order some [*black garlic ketchup* from The Garlic Farm](https://www.thegarlicfarm.co.uk/collections/all-products/products/black-garlic-ketchup).
+It's not the first time I've made this, so I know approximately what I was doing, but today's was special because I happened to order some [*black garlic ketchup* from The Garlic Farm](https://www.thegarlicfarm.co.uk/collections/all-products/products/black-garlic-ketchup).
 (I also bought some actual garlic from them to grow in my back garden!)
 Consequently, it doesn't look red at all!
 It looks more ... black, so maybe it should be called _masak hitam_?
