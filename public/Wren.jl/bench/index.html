@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wren benchmarks</title>
+    <style>
+      :root {
+        --bg-primary: #f6f7f2;
+        --text-primary: #1e293b;
+      }
+      [data-theme="dark"] {
+        --bg-primary: #0f172a;
+        --text-primary: #cbd5e1;
+      }
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        margin: 0;
+      }
+    </style>
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = savedTheme === "dark" || (!savedTheme && prefersDark) ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-DJuEho2-.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B8V884sf.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
