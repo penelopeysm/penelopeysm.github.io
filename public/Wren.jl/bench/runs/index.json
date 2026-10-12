@@ -1,5 +1,12 @@
 [
   {
+    "commit_date": "2026-10-12T00:42:53Z",
+    "file": "20261012T005048Z-cff5a17.json",
+    "git_sha": "cff5a17937d0e4f0f3d99dd6c090bd09445227b4",
+    "label": "Stop using addloglikelihood in glmm_poisson",
+    "timestamp": "2026-10-12T00:50:48.124Z"
+  },
+  {
     "commit_date": "2026-10-11T23:59:29Z",
     "file": "20261012T003224Z-6d4f623.json",
     "git_sha": "6d4f6233ecf25d70924b0104df2618e630b07a51",
