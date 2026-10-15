@@ -1,5 +1,33 @@
 [
   {
+    "commit_date": "2026-10-15T00:08:29Z",
+    "file": "20261015T001200Z-64c3bac.json",
+    "git_sha": "64c3bac76ca10202c27b7ca6eff39f81526fa85d",
+    "label": "Fix latent source for empty submodels (#210)",
+    "timestamp": "2026-10-15T00:12:00.059Z"
+  },
+  {
+    "commit_date": "2026-10-14T22:43:01Z",
+    "file": "20261014T224658Z-d528e32.json",
+    "git_sha": "d528e32488ceaf05976b069971ccdbde66ec4363",
+    "label": "Fix indices in generic batch fallback (#209)",
+    "timestamp": "2026-10-14T22:46:58.065Z"
+  },
+  {
+    "commit_date": "2026-10-12T23:31:41Z",
+    "file": "20261012T234402Z-fb99b88.json",
+    "git_sha": "fb99b888cde376b96e85225ea7d4c125f8ea37e1",
+    "label": "Move PosteriorDB models to WrenCore ext and tweak definitions (#186)",
+    "timestamp": "2026-10-12T23:44:02.151Z"
+  },
+  {
+    "commit_date": "2026-10-12T18:54:52Z",
+    "file": "20261012T190730Z-a752237.json",
+    "git_sha": "a75223732587006216886877bc3874275c978d3b",
+    "label": "Vibe code more improvements to benchmark website (#185)",
+    "timestamp": "2026-10-12T19:07:30.394Z"
+  },
+  {
     "commit_date": "2026-10-12T00:42:53Z",
     "file": "20261012T005048Z-cff5a17.json",
     "git_sha": "cff5a17937d0e4f0f3d99dd6c090bd09445227b4",

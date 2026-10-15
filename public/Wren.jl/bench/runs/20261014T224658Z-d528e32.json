@@ -1,0 +1,256 @@
+{
+  "backends": [
+    "primal",
+    "enzyme_reverse",
+    "mooncake_reverse"
+  ],
+  "manifest": {
+    "ADTypes": "1.24.0",
+    "Accessors": "0.1.45",
+    "ArgCheck": "2.5.0",
+    "ArgTools": "1.1.2",
+    "Artifacts": "1.11.0",
+    "BangBang": "0.4.9",
+    "Base64": "1.11.0",
+    "CEnum": "0.5.0",
+    "ChainRulesCore": "1.26.1",
+    "Chairmarks": "1.3.1",
+    "ChangesOfVariables": "0.1.11",
+    "Compat": "4.18.1",
+    "CompilerSupportLibraries_jll": "1.5.5+2",
+    "CompositionsBase": "0.1.2",
+    "ConstructionBase": "1.6.0",
+    "Dates": "1.11.0",
+    "DensityInterface": "0.4.0",
+    "DifferentiationInterface": "0.7.21",
+    "DispatchDoctor": "0.4.29",
+    "DocStringExtensions": "0.9.5",
+    "Downloads": "1.7.0",
+    "Enzyme": "0.13.216",
+    "EnzymeCore": "0.8.21",
+    "Enzyme_jll": "0.0.303+0",
+    "ExprTools": "0.1.11",
+    "ExpressionExplorer": "1.1.6",
+    "FileWatching": "1.11.0",
+    "FillArrays": "1.18.0",
+    "GPUCompiler": "1.23.0",
+    "HashArrayMappedTries": "0.2.0",
+    "InitialValues": "0.3.1",
+    "InteractiveUtils": "1.11.0",
+    "InverseFunctions": "0.1.17",
+    "IrrationalConstants": "0.2.6",
+    "JLLWrappers": "1.8.0",
+    "JSON": "1.10.0",
+    "JSON3": "1.14.3",
+    "JuliaSyntaxHighlighting": "1.12.0",
+    "LLVM": "9.13.2",
+    "LLVMExtra_jll": "0.0.47+0",
+    "LazyArtifacts": "1.11.0",
+    "LibCURL": "1.0.0",
+    "LibCURL_jll": "8.18.0+1",
+    "LibGit2": "1.11.0",
+    "LibGit2_jll": "1.9.1+0",
+    "LibSSH2_jll": "1.11.104+0",
+    "LibTracyClient_jll": "0.13.1+0",
+    "Libdl": "1.11.0",
+    "LinearAlgebra": "1.13.0",
+    "LogDensityProblems": "2.2.0",
+    "LogExpFunctions": "1.0.2",
+    "Logging": "1.11.0",
+    "MacroTools": "0.5.16",
+    "Markdown": "1.11.0",
+    "MistyClosures": "2.1.0",
+    "Mmap": "1.11.0",
+    "Mooncake": "0.5.64",
+    "MozillaCACerts_jll": "2026.8.13",
+    "NetworkOptions": "1.3.0",
+    "ObjectFile": "0.5.1",
+    "OpenBLAS_jll": "0.3.30+0",
+    "OpenLibm_jll": "0.8.7+0",
+    "OpenSSL_jll": "3.5.6+0",
+    "OpenSpecFun_jll": "0.5.6+0",
+    "OrderedCollections": "2.0.3",
+    "PCRE2_jll": "10.46.0+0",
+    "Parsers": "2.8.8",
+    "Pkg": "1.13.0",
+    "Plaice": "0.1.3",
+    "PosteriorDB": "0.7.1",
+    "PrecompileTools": "1.3.4",
+    "Preferences": "1.6.0",
+    "Printf": "1.11.0",
+    "REPL": "1.11.0",
+    "Random": "1.11.0",
+    "ReactantCore": "0.1.23",
+    "Reexport": "1.2.2",
+    "RuntimeGeneratedFunctions": "0.5.27",
+    "SHA": "1.0.0",
+    "ScopedValues": "1.6.2",
+    "Scratch": "1.3.0",
+    "Serialization": "1.11.0",
+    "Sockets": "1.11.0",
+    "SparseArrays": "1.13.0",
+    "SpecialFunctions": "2.9.0",
+    "Statistics": "1.11.5",
+    "StatsAPI": "1.8.0",
+    "StructIO": "0.3.1",
+    "StructTypes": "1.11.0",
+    "StructUtils": "2.9.2",
+    "StyledStrings": "1.11.0",
+    "SuiteSparse_jll": "7.10.1+0",
+    "TOML": "1.0.3",
+    "Tar": "1.10.0",
+    "Test": "1.11.0",
+    "Tracy": "0.1.6",
+    "UUIDs": "1.11.0",
+    "Unicode": "1.11.0",
+    "VarNames": "0.1.4",
+    "WrenCore": "0.1.0",
+    "WrenDists": "0.1.0",
+    "ZipFile": "0.10.1",
+    "Zlib_jll": "1.3.1+2",
+    "Zstd_jll": "1.5.7+1",
+    "libblastrampoline_jll": "5.15.0+0",
+    "nghttp2_jll": "1.67.1+0",
+    "p7zip_jll": "17.8.2+0"
+  },
+  "meta": {
+    "commit_date": "2026-10-14T22:43:01Z",
+    "dirty": false,
+    "git_sha": "d528e32488ceaf05976b069971ccdbde66ec4363",
+    "julia_version": "1.13.1",
+    "label": "Fix indices in generic batch fallback (#209)",
+    "machine": {
+      "arch": "aarch64",
+      "blas_threads": 1,
+      "cpu": "Apple M5 Pro",
+      "cpu_threads": 15,
+      "julia_threads": 8,
+      "memory_gb": 48,
+      "os": "Darwin"
+    },
+    "timestamp": "2026-10-14T22:46:58.065Z"
+  },
+  "results": {
+    "ArK": {
+      "dim": 7,
+      "enzyme_reverse": {
+        "time": 9.812500000000001e-7
+      },
+      "mooncake_reverse": {
+        "time": 5.533200000000001e-6
+      },
+      "primal": {
+        "time": 2.9738750000000003e-7
+      }
+    },
+    "EightSchoolsCentered": {
+      "dim": 10,
+      "enzyme_reverse": {
+        "time": 1.4102564102564104e-7
+      },
+      "mooncake_reverse": {
+        "time": 1.6157222222222225e-6
+      },
+      "primal": {
+        "time": 5.722891566265061e-8
+      }
+    },
+    "GLMBinomial": {
+      "dim": 3,
+      "enzyme_reverse": {
+        "time": 1.4167e-6
+      },
+      "mooncake_reverse": {
+        "time": 2.3264166666666666e-6
+      },
+      "primal": {
+        "time": 9.639e-7
+      }
+    },
+    "GLMMPoisson": {
+      "dim": 45,
+      "enzyme_reverse": {
+        "time": 1.0061481481481481e-6
+      },
+      "mooncake_reverse": {
+        "time": 5.0070000000000005e-6
+      },
+      "primal": {
+        "time": 3.934428571428572e-7
+      }
+    },
+    "GLMPoisson": {
+      "dim": 4,
+      "enzyme_reverse": {
+        "time": 7.747567567567568e-7
+      },
+      "mooncake_reverse": {
+        "time": 1.5e-6
+      },
+      "primal": {
+        "time": 3.56775e-7
+      }
+    },
+    "GPRegr": {
+      "dim": 3,
+      "enzyme_reverse": {
+        "time": 3.46875e-6
+      },
+      "mooncake_reverse": {
+        "time": 4.6168e-6
+      },
+      "primal": {
+        "time": 7.261714285714286e-7
+      }
+    },
+    "KidscoreInteraction": {
+      "dim": 5,
+      "enzyme_reverse": {
+        "time": 1.2204583333333335e-6
+      },
+      "mooncake_reverse": {
+        "time": 6.65625e-6
+      },
+      "primal": {
+        "time": 5.66811320754717e-7
+      }
+    },
+    "Mh": {
+      "dim": 388,
+      "enzyme_reverse": {
+        "time": 1.5167e-5
+      },
+      "mooncake_reverse": {
+        "time": 3.0291000000000002e-5
+      },
+      "primal": {
+        "time": 7.944666666666667e-6
+      }
+    },
+    "Rate1": {
+      "dim": 1,
+      "enzyme_reverse": {
+        "time": 1.0625e-7
+      },
+      "mooncake_reverse": {
+        "time": 1.960909090909091e-7
+      },
+      "primal": {
+        "time": 4.1419019316493316e-8
+      }
+    },
+    "SblriBLR": {
+      "dim": 6,
+      "enzyme_reverse": {
+        "time": 3.803709677419355e-7
+      },
+      "mooncake_reverse": {
+        "time": 2.8417000000000003e-6
+      },
+      "primal": {
+        "time": 1.5734868421052631e-7
+      }
+    }
+  },
+  "schema_version": 1
+}
