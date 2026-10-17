@@ -61,32 +61,37 @@ To refute the three points above:
    That won't be easy for me personally, but it's also not 'hard', in the sense that there is no reason why that can't happen.
 
 3. This is probably the most 'controversial' part of this post, but I think that even though this is exciting in many ways, it also makes it way less fun for me. :(
+   The main reason is because this involves making 'proper' software that is actually used.
 
-   For one, there are users and expectations to deal with.
-   This is in some ways a blessing, of course: it means that my software is good enough to be depended upon, and that it's actually making other people's lives (hopefully!) better.
-   But it also brings with it a sense of obligation, and what I can only describe as a feeling of being permanently tied to it; that no matter what I am doing, I will always have to come back to look at issues and PRs.
-   This feeling of obligation is at least somewhat tolerable when it's my job.
-   However, Julia is no longer my job.
-   I want to be able to do fun stuff in my free time.
-   My actual job gives me enough obligations!
+## What's bad about 'proper' software?
 
-   Of course, it's slightly hyperbolic to claim that I can _never_ escape these obligations.
-   I can always simply _stop_ doing so, by choosing to actively stop or reduce my maintenance.
-   But that's exactly the point I am making here—I _must_ consciously do so, sooner or later, or else I will actually be the one tying myself to it in a self-flagellating way.
+For one, there are users and expectations to deal with.
+This is in some ways a blessing, of course: it means that my software is good enough to be depended upon, and that it's actually making other people's lives (hopefully!) better.
+But it also brings with it a sense of obligation, and what I can only describe as a feeling of being permanently tied to it; that no matter what I am doing, I will always have to come back to look at issues and PRs.
+This feeling of obligation is at least somewhat tolerable when it's my job.
+However, Julia is no longer my job.
+I want to be able to do fun stuff in my free time.
+My actual job gives me enough obligations!
 
-   Apart from that, 'proper' software is simply less fun because there are all sorts of tiny details that need to be paid attention to.
-   This means that there is no longer the joy of figuring out how to do something even if it's imperfect; instead it's replaced by a slog of fixing bugs and eliminating edge cases.
-   Again, this isn't a bad thing in and of itself, but I'd rather deal with that at work, instead of in my free time.
+Of course, it's slightly hyperbolic to claim that I can _never_ escape these obligations.
+I can always simply _stop_ doing so, by choosing to actively stop or reduce my maintenance.
+But that's exactly the point I am making here—I _must_ consciously do so, sooner or later, or else I will actually be the one tying myself to it in a self-flagellating way.
 
-   And finally, with professional software there's more of a focus on getting things done and being productive.
-   This, in turn, means using LLMs to code.
-   The usual drawback of AI coding is that you learn less about the codebase and what you're doing, but it's very unlikely that I'm really going to learn anything new about something like FlexiChains, so that's a moot point here.
-   Now, in general, I am a huge fan of LLMs, but it's undeniable that they take out a lot of the joy of coding: you don't get to solve a puzzle any more, instead you're handed the solution.
+Apart from that, mature software is simply less fun because there are all sorts of tiny details that need to be paid attention to.
+This means that there is no longer the joy of figuring out how to do something even if it's imperfect; instead it's replaced by a slog of fixing bugs and eliminating edge cases.
+Again, this isn't a bad thing in and of itself, but I'd rather deal with that at work, instead of in my free time.
+
+And finally, with professional software there's more of a focus on getting things done and being productive.
+This, in turn, means using LLMs to code.
+The usual drawback of AI coding is that you learn less about the codebase and what you're doing, but it's very unlikely that I'm really going to learn anything new about something like FlexiChains, so that's a moot point here.
+Now, in general, I am a huge fan of LLMs, but it's undeniable that they take out a lot of the joy of coding: you don't get to solve a puzzle any more, instead you're handed the solution.
+
+## What next?
 
 So... I can't say I'm entirely ready to pass on the mantle yet, but I _do_ know that I must do so at some point, whether gradually or abruptly.
 I can't sit here for many more evenings and do something that doesn't really make me happy anymore.
 
-There are so many more things that I want to do with my increasingly limited time.
+There are **so many more things** that I want to do with my increasingly limited time.
 These include the usual household chores; or cooking; or gardening (a dangerous act because the more you garden the more time you have to spend on it); or practising all the musical instruments I have; or reading books (I watched *Sense and Sensibility* in the cinemas and that reminded me how much I liked reading Austen, and even some literary theory); or playing the Switch 2 I bought but rarely play; or just coding...
 
 ... but specifically, fun types of coding!
@@ -94,6 +99,8 @@ For example, I still have a ton of compiler books to read, and I've added type t
 And it's cool!
 I'm not going to become a compiler genius, but I'd certainly like to learn a bit.
 And, if I'm just writing some half-baked compiler or type checker that nobody is going to depend on, that lets me do things at my own pace, undisturbed, and with less vibe coding.
-(I still talk to LLMs a lot to gain more understanding—a little bit like having a colleague to bounce ideas off—but I certainly wouldn't get it to write the actual code.)
+I still talk to LLMs a lot to gain more understanding—a little bit like having a colleague to bounce ideas off—but I certainly wouldn't get it to write the actual code.
 
-That doesn't necessarily mean abandoning Julia, because there are plenty of compiler projects in Julia, but it might mean eventually closing the chapter on Bayesian stuff.
+That doesn't necessarily mean abandoning Julia, because there are plenty of compiler projects in Julia.
+However, it might mean eventually closing the chapter on Bayesian stuff.
+(And, as much as I like Julia, I have to admit that it is infinitely more _fun_ to write Haskell or OCaml...)
