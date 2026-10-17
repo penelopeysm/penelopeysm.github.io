@@ -27,7 +27,7 @@ I am very, very happy at it, but my new job _is_ undoubtedly very tiring.
 There are hard problems to solve, a lot to learn at once, and also a lovely commute.
 It doesn't help that we are inching closer to winter: I like many things about winter, but trudging back home from the office long after sunset is not one of them.
 
-There are several reasons why I still spend a lot of my free time on Julia.
+Despite this, there are several reasons why I still spend a lot of my free time on Julia.
 
 1. It's my comfort zone! After a long work day where I feel like I've been banging my head against a wall of types, it's nice to be able to feel like I'm capable of coding.
    (Yes, there's some level of impostor syndrome from work—it was pretty bad at the start—but that's a story for another time!)
