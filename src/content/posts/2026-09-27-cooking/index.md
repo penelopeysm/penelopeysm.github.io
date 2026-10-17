@@ -1,5 +1,5 @@
 ---
-title: "Introduction to My Kitchen"
+title: "An introduction to my kitchen"
 publishDate: "2026-09-27"
 tags: ["cooking"]
 ---
