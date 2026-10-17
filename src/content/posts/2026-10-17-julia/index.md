@@ -46,7 +46,7 @@ Unfortunately, I do also feel that I really want to stop doing open-source Julia
 
 ## ... Why?
 
-To refute the three points above:
+I'll offer a counter to each of the three points above in turn:
 
 1. I am actually getting more comfortable with work.
    There's still a lot I don't know, and that will almost certainly stay true in the future.
