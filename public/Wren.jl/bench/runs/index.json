@@ -1,5 +1,12 @@
 [
   {
+    "commit_date": "2026-10-31T21:42:30Z",
+    "file": "20261101T004908Z-c60643b.json",
+    "git_sha": "c60643b797bd325dbbae3850e2fa98d7d5b9c670",
+    "label": "Use released FlexiChains (#263)",
+    "timestamp": "2026-11-01T00:49:08.789Z"
+  },
+  {
     "commit_date": "2026-10-23T22:11:55Z",
     "file": "20261023T230443Z-b5f098a.json",
     "git_sha": "b5f098a5295581b7d545da452dca2365ecd80a89",
