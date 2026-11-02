@@ -1,5 +1,12 @@
 [
   {
+    "commit_date": "2026-11-02T00:21:56Z",
+    "file": "20261102T010630Z-56b53bc.json",
+    "git_sha": "56b53bc91868d9ba95d85f941d3a380fe5741cf4",
+    "label": "Restrict conditioning to whole variables (#260)",
+    "timestamp": "2026-11-02T01:06:30.814Z"
+  },
+  {
     "commit_date": "2026-10-31T21:42:30Z",
     "file": "20261101T004908Z-c60643b.json",
     "git_sha": "c60643b797bd325dbbae3850e2fa98d7d5b9c670",
