@@ -1,0 +1,5 @@
+article img[src$="beginner__density_d.png"] {
+    max-height: 300px;
+    display: block;
+    margin: 0 auto;
+}
